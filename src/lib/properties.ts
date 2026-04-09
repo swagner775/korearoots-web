@@ -18,6 +18,7 @@ export const properties: Property[] = [
     location: {
       siGunGu: "Boryeong-si",
       province: "Chungnam",
+      mapUrl: "https://maps.google.com/maps?q=충청남도+보령시+주산면+금암리&output=embed",
     },
     price: 100_000_000,
     landSizeM2: 446,
@@ -37,6 +38,7 @@ export const properties: Property[] = [
     location: {
       siGunGu: "Boryeong-si",
       province: "Chungnam",
+      mapUrl: "https://maps.google.com/maps?q=충청남도+보령시+주산면+동오리&output=embed",
     },
     price: 110_000_000,
     landSizeM2: 200,
@@ -56,6 +58,7 @@ export const properties: Property[] = [
     location: {
       siGunGu: "Seogwipo-si",
       province: "Jeju",
+      mapUrl: "https://maps.google.com/maps?q=제주도+서귀포시&output=embed",
     },
     price: 210_000_000,
     landSizeM2: 820,

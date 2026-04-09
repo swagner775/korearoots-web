@@ -147,6 +147,28 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
 
         </div>
 
+        {/* Map */}
+        {property.location.mapUrl && (
+          <div className="flex flex-col gap-3">
+            <h2 className="text-white font-semibold text-sm uppercase tracking-widest text-white/40">Location</h2>
+            <div className="rounded-2xl overflow-hidden border border-white/10 w-full aspect-[16/7]">
+              <iframe
+                src={property.location.mapUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`Map of ${property.title}`}
+              />
+            </div>
+            <p className="text-white/30 text-xs">
+              {property.location.siGunGu}, {property.location.province} · Exact address shared after consultation
+            </p>
+          </div>
+        )}
+
         {/* D-8 eligibility callout */}
         {property.visaEligible && (
           <div className="rounded-2xl border border-teal/20 bg-teal/5 p-6 flex items-start gap-4">
