@@ -10,6 +10,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* KoreaRoots brand colors */
+  --color-navy: #0D1B2A;
+  --color-teal: #1B998B;
+  --color-gold: #E9C46A;
 }
 
 @media (prefers-color-scheme: dark) {
