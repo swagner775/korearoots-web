@@ -35,7 +35,7 @@ async function fetchPage(cortarNo, page, retries = 3) {
     priceMin: "0",
     priceMax: String(MAX_PRICE_MANWON),
     page: String(page),
-    pageSize: "20",
+    pageSize: "10",
   });
 
   const url = `${ARTICLE_LIST_API}?${params}`;
@@ -168,8 +168,8 @@ export async function scrapeRegion(region) {
 
     if (page === 1) {
       const total = pageInfo.totalCount || body.totalCount || 0;
-      totalPages = pageInfo.totalPageCount || body.totalPages || Math.ceil(total / 20) || 1;
-      console.log(`[scrape] ${region.name}: ~${total} total, ${totalPages} pages`);
+      totalPages = 1; // only fetch first page (10 listings) per region
+      console.log(`[scrape] ${region.name}: ~${total} total available, fetching top 10`);
     }
 
     if (articles.length === 0) break;
