@@ -1,0 +1,14 @@
+{
+  "name": "korearoots-scraper",
+  "version": "1.0.0",
+  "description": "Daily Naver Land scraper for KoreaRoots",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js --dry-run"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
