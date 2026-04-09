@@ -69,6 +69,7 @@ function buildFields(l) {
     "Naver URL": l.naverUrl,
     "Status": "New",
     "Scraped At": l.scrapedAt,
+    "Notes": l.source || "",
   };
 
   // Attach photos if the listing has any.

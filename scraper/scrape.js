@@ -1,263 +1,251 @@
 import fetch from "node-fetch";
 import { MAX_PRICE_MANWON } from "./regions.js";
 
-// Naver Land (NaverPay Real Estate) APIs
-const ARTICLE_LIST_API = "https://new.land.naver.com/api/articles";
-const ARTICLE_DETAIL_API = "https://new.land.naver.com/api/articles"; // /{articleNo}
-
-// Thumbnail CDN pattern used by Naver Land
-const THUMB_CDN = "https://landthumb-phinf.pstatic.net";
-
-// Headers to mimic a real browser session
-const HEADERS = {
+const HEADERS_COMMON = {
   "User-Agent":
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
   "Accept": "application/json, text/plain, */*",
   "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8",
-  "Referer": "https://new.land.naver.com/",
-  "sec-fetch-dest": "empty",
-  "sec-fetch-mode": "cors",
-  "sec-fetch-site": "same-origin",
 };
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-/**
- * Fetch one page of listings for a region with retry on rate limit.
- */
-async function fetchPage(cortarNo, page, retries = 3) {
-  const params = new URLSearchParams({
-    cortarNo,
-    realEstateType: "SG:SMS:ABYG:JGC",
-    tradeType: "A1",
-    priceMin: "0",
-    priceMax: String(MAX_PRICE_MANWON),
-    page: String(page),
-    pageSize: "10",
-  });
+// ─────────────────────────────────────────────
+// CARROT (당근마켓 / daangn.com)
+// ─────────────────────────────────────────────
 
-  const url = `${ARTICLE_LIST_API}?${params}`;
+const CARROT_REGION_CODES = {
+  Gangwon:  "gangwon",
+  Gyeongbuk: "gyeongsangbuk_do",
+  Gyeongnam: "gyeongsangnam_do",
+  Jeonbuk:  "jeollabuk_do",
+  Jeonnam:  "jeollanam_do",
+  Chungbuk: "chungcheongbuk_do",
+  Chungnam: "chungcheongnam_do",
+  Jeju:     "jeju",
+};
 
-  for (let attempt = 1; attempt <= retries; attempt++) {
-    try {
-      const res = await fetch(url, { headers: HEADERS, timeout: 20000 });
+async function scrapeCarrotRegion(region) {
+  const regionCode = CARROT_REGION_CODES[region.name];
+  if (!regionCode) return [];
 
-      if (res.status === 429) {
-        const wait = attempt * 8000;
-        console.warn(`[scrape] Rate limited (cortarNo ${cortarNo} page ${page}), waiting ${wait / 1000}s...`);
-        await sleep(wait);
-        continue;
-      }
+  // Carrot web API for real estate listings
+  const url = `https://www.daangn.com/api/v1/realty/articles?region=${regionCode}&trade_type=sale&page=1&per=20`;
 
-      if (!res.ok) {
-        console.warn(`[scrape] HTTP ${res.status} for cortarNo ${cortarNo} page ${page}`);
-        return null;
-      }
+  try {
+    const res = await fetch(url, {
+      headers: {
+        ...HEADERS_COMMON,
+        "Referer": "https://www.daangn.com/",
+      },
+      timeout: 15000,
+    });
 
-      return await res.json();
-    } catch (err) {
-      if (attempt < retries) {
-        console.warn(`[scrape] Attempt ${attempt} failed:`, err.message);
-        await sleep(3000 * attempt);
-      } else {
-        console.warn(`[scrape] All ${retries} attempts failed for cortarNo ${cortarNo}:`, err.message);
-        return null;
-      }
+    if (!res.ok) {
+      // Fallback: try the search API
+      return await scrapeCarrotSearch(region);
     }
+
+    const json = await res.json();
+    const articles = json.data?.articles || json.articles || json.realty_articles || [];
+
+    return articles
+      .map((a) => normalizeCarrot(a, region))
+      .filter(Boolean)
+      .filter((l) => l.priceManwon <= MAX_PRICE_MANWON);
+  } catch (err) {
+    console.warn(`[carrot] Error for ${region.name}:`, err.message);
+    return await scrapeCarrotSearch(region);
   }
-  return null;
 }
 
-/**
- * Fetch article detail to get all photo URLs.
- * Returns array of photo URL strings.
- */
-async function fetchArticlePhotos(articleNo) {
-  const url = `${ARTICLE_DETAIL_API}/${articleNo}`;
+async function scrapeCarrotSearch(region) {
+  // Fallback: use Carrot's search endpoint
+  const query = encodeURIComponent(`${region.nameKo} 빈집 매매`);
+  const url = `https://www.daangn.com/api/v1/search/articles?query=${query}&category=realty&page=1&per=20`;
+
   try {
-    const res = await fetch(url, { headers: HEADERS, timeout: 15000 });
-    if (!res.ok) return [];
+    const res = await fetch(url, {
+      headers: { ...HEADERS_COMMON, "Referer": "https://www.daangn.com/" },
+      timeout: 15000,
+    });
+
+    if (!res.ok) {
+      console.warn(`[carrot] Search also failed for ${region.name}: ${res.status}`);
+      return [];
+    }
+
     const json = await res.json();
+    const articles = json.data?.articles || json.articles || [];
 
-    // Photos can be in several places depending on the API response
-    const body = json.body || json.articleDetail || json;
-
-    // Try to extract photo URLs from known fields
-    const photoUrls = [];
-
-    // articlePhotoList is the most common field
-    const photoList =
-      body.articlePhotoList ||
-      body.photoList ||
-      body.images ||
-      body.photos ||
-      [];
-
-    for (const photo of photoList) {
-      const url =
-        photo.photoUrl ||
-        photo.url ||
-        photo.imageUrl ||
-        photo.src ||
-        (typeof photo === "string" ? photo : null);
-      if (url && url.startsWith("http")) photoUrls.push(url);
-    }
-
-    // Fallback: check for representativePhotoUrl
-    const repPhoto =
-      body.representativePhotoUrl ||
-      body.thumbnailUrl ||
-      body.representativeImgUrl;
-    if (repPhoto && repPhoto.startsWith("http") && !photoUrls.includes(repPhoto)) {
-      photoUrls.unshift(repPhoto);
-    }
-
-    return photoUrls.slice(0, 10); // cap at 10 photos per listing
+    return articles
+      .map((a) => normalizeCarrot(a, region))
+      .filter(Boolean)
+      .filter((l) => l.priceManwon <= MAX_PRICE_MANWON);
   } catch (err) {
-    console.warn(`[scrape] fetchArticlePhotos failed for ${articleNo}:`, err.message);
+    console.warn(`[carrot] Search error for ${region.name}:`, err.message);
     return [];
   }
 }
 
-/**
- * Extract thumbnail URL from the article list item.
- */
-function extractThumbnail(article) {
-  const raw =
-    article.representativePh ||
-    article.articlePhotoCount > 0 && null ||  // will use detail fetch instead
-    article.thumbnailUrl ||
-    article.representativeImgUrl ||
-    article.articleImageUrl ||
-    article.photoUrl ||
-    article.imgUrl ||
-    article.thumbnail ||
-    null;
-
-  if (!raw) return null;
-  if (raw.startsWith("http")) return raw;
-  if (raw.startsWith("//")) return `https:${raw}`;
-  if (raw.startsWith("/")) return `${THUMB_CDN}${raw}`;
-  return null;
-}
-
-/**
- * Scrape all pages for a region and fetch photos for each listing.
- * Returns array of normalized listing objects.
- */
-export async function scrapeRegion(region) {
-  const listings = [];
-  let page = 1;
-  let totalPages = 1;
-
-  console.log(`[scrape] Starting region: ${region.name} (${region.cortarNo})`);
-
-  while (page <= totalPages) {
-    const data = await fetchPage(region.cortarNo, page);
-
-    if (!data) {
-      console.warn(`[scrape] No data for ${region.name} page ${page}`);
-      break;
-    }
-
-    const body = data.body || data;
-    const articles = body.articleList || body.list || body.articles || [];
-    const pageInfo = body.pageInfo || {};
-
-    if (page === 1) {
-      const total = pageInfo.totalCount || body.totalCount || 0;
-      totalPages = 1; // only fetch first page (10 listings) per region
-      console.log(`[scrape] ${region.name}: ~${total} total available, fetching top 10`);
-    }
-
-    if (articles.length === 0) break;
-
-    for (const article of articles) {
-      const normalized = normalizeArticle(article, region);
-      if (normalized) listings.push(normalized);
-    }
-
-    console.log(`[scrape] ${region.name} page ${page}/${totalPages} — ${articles.length} items, ${listings.length} kept`);
-    page++;
-
-    if (page <= totalPages) await sleep(2000 + Math.random() * 1000);
-  }
-
-  return listings;
-}
-
-/**
- * Map a raw Naver Land article to our clean schema.
- */
-function normalizeArticle(article, region) {
+function normalizeCarrot(article, region) {
   try {
-    const priceRaw =
-      article.dealOrWarrantPrc ||
-      article.prc ||
-      article.price ||
-      article.dealPrice ||
-      "";
-
+    const priceRaw = article.price || article.sale_price || article.trading_price || "";
     const priceManwon = parsePriceManwon(priceRaw);
-    if (priceManwon === null || priceManwon > MAX_PRICE_MANWON) return null;
+    if (!priceManwon || priceManwon > MAX_PRICE_MANWON) return null;
 
-    const articleNo = String(
-      article.articleNo ||
-      article.atclNo ||
-      article.articleId ||
-      article.id ||
-      ""
-    );
-    if (!articleNo) return null;
+    const id = String(article.id || article.article_id || "");
+    if (!id) return null;
 
-    // Grab thumbnail from the list response (fast — no extra API call)
-    const thumb = extractThumbnail(article);
-    const photos = thumb ? [thumb] : [];
+    const thumb =
+      article.thumbnail_image?.url ||
+      article.first_image?.url ||
+      article.images?.[0]?.url ||
+      article.thumbnail ||
+      null;
 
     return {
-      listingId: articleNo,
-      title: article.articleName || article.atclNm || article.name || article.title || "",
+      listingId: `carrot-${id}`,
+      title: article.title || article.name || "",
       region: region.name,
-      address: buildAddress(article),
-      propertyType:
-        article.realEstateTypeName ||
-        article.rletTpNm ||
-        article.propertyType ||
-        "",
+      address: article.region_name || article.address || region.nameKo,
+      propertyType: article.realty_type || article.category || "단독주택",
       priceManwon,
       priceKrw: priceManwon * 10000,
       priceUsd: Math.round((priceManwon * 10000) / 1380),
       priceRaw: String(priceRaw),
-      floorInfo: article.floorInfo || article.flrInfo || "",
-      areaM2: parseFloat(article.area1 || article.spc1 || "0") || 0,
-      direction: article.direction || "",
-      description:
-        article.articleFeatureDesc ||
-        article.atclFetrDesc ||
-        article.description ||
-        "",
-      agentName: article.realtorName || article.rltrNm || "",
-      latitude: parseFloat(article.latitude || article.lat || article.mapY || "0") || 0,
-      longitude: parseFloat(article.longitude || article.lon || article.mapX || "0") || 0,
-      naverUrl: `https://new.land.naver.com/article/${articleNo}`,
-      photos,         // array of photo URLs (up to 10)
+      floorInfo: "",
+      areaM2: parseFloat(article.area || "0") || 0,
+      direction: "",
+      description: article.body || article.content || article.description || "",
+      agentName: article.user?.nickname || article.writer?.nickname || "",
+      latitude: parseFloat(article.location?.lat || "0") || 0,
+      longitude: parseFloat(article.location?.lng || "0") || 0,
+      naverUrl: `https://www.daangn.com/articles/${id}`,
+      photos: thumb ? [thumb] : [],
       scrapedAt: new Date().toISOString(),
+      source: "Carrot (당근마켓)",
     };
-  } catch (err) {
-    console.warn("[scrape] normalizeArticle error:", err.message);
+  } catch {
     return null;
   }
 }
 
-function buildAddress(article) {
-  const parts = [
-    article.cortarAddress || article.address || article.jibunAddress || "",
-    article.buildingName || article.bldNm || "",
-  ].filter(Boolean);
-  return parts.join(" ").trim();
+// ─────────────────────────────────────────────
+// PETER PAN (피터팬 / peterpanz.com)
+// ─────────────────────────────────────────────
+
+const PETERPAN_REGION_CODES = {
+  Gangwon:   "42",
+  Gyeongbuk: "47",
+  Gyeongnam: "48",
+  Jeonbuk:   "45",
+  Jeonnam:   "46",
+  Chungbuk:  "43",
+  Chungnam:  "44",
+  Jeju:      "50",
+};
+
+async function scrapePeterPanRegion(region) {
+  const regionCode = PETERPAN_REGION_CODES[region.name];
+  if (!regionCode) return [];
+
+  const url = `https://peterpanz.com/api/houses?filter_type=sale&location_code=${regionCode}&price_max=${MAX_PRICE_MANWON}&page=1&limit=20`;
+
+  try {
+    const res = await fetch(url, {
+      headers: {
+        ...HEADERS_COMMON,
+        "Referer": "https://peterpanz.com/",
+      },
+      timeout: 15000,
+    });
+
+    if (!res.ok) {
+      console.warn(`[peterpan] HTTP ${res.status} for ${region.name}`);
+      return [];
+    }
+
+    const json = await res.json();
+    const items = json.data?.houses || json.houses || json.items || json.result || [];
+
+    return items
+      .map((h) => normalizePeterPan(h, region))
+      .filter(Boolean)
+      .filter((l) => l.priceManwon <= MAX_PRICE_MANWON);
+  } catch (err) {
+    console.warn(`[peterpan] Error for ${region.name}:`, err.message);
+    return [];
+  }
 }
+
+function normalizePeterPan(house, region) {
+  try {
+    const priceRaw = house.price || house.sale_price || house.deposit || "";
+    const priceManwon = parsePriceManwon(priceRaw);
+    if (!priceManwon || priceManwon > MAX_PRICE_MANWON) return null;
+
+    const id = String(house.id || house.house_id || "");
+    if (!id) return null;
+
+    const thumb =
+      house.thumbnail ||
+      house.images?.[0] ||
+      house.photo_url ||
+      null;
+
+    return {
+      listingId: `peterpan-${id}`,
+      title: house.title || house.name || house.building_name || "",
+      region: region.name,
+      address: house.address || house.road_address || house.location || region.nameKo,
+      propertyType: house.house_type || house.building_type || "단독주택",
+      priceManwon,
+      priceKrw: priceManwon * 10000,
+      priceUsd: Math.round((priceManwon * 10000) / 1380),
+      priceRaw: String(priceRaw),
+      floorInfo: house.floor ? `${house.floor}층` : "",
+      areaM2: parseFloat(house.exclusive_area || house.area || "0") || 0,
+      direction: house.direction || "",
+      description: house.description || house.content || "",
+      agentName: house.agent_name || "",
+      latitude: parseFloat(house.lat || house.latitude || "0") || 0,
+      longitude: parseFloat(house.lng || house.longitude || "0") || 0,
+      naverUrl: `https://peterpanz.com/houses/${id}`,
+      photos: thumb ? [thumb] : [],
+      scrapedAt: new Date().toISOString(),
+      source: "Peter Pan (피터팬)",
+    };
+  } catch {
+    return null;
+  }
+}
+
+// ─────────────────────────────────────────────
+// MAIN EXPORT
+// ─────────────────────────────────────────────
+
+export async function scrapeRegion(region) {
+  console.log(`[scrape] ${region.name} — trying Carrot...`);
+  const carrotListings = await scrapeCarrotRegion(region);
+  console.log(`[scrape] ${region.name} — Carrot: ${carrotListings.length} listings`);
+
+  await sleep(1500);
+
+  console.log(`[scrape] ${region.name} — trying Peter Pan...`);
+  const peterpanListings = await scrapePeterPanRegion(region);
+  console.log(`[scrape] ${region.name} — Peter Pan: ${peterpanListings.length} listings`);
+
+  await sleep(1000);
+
+  return [...carrotListings, ...peterpanListings];
+}
+
+// ─────────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────────
 
 function parsePriceManwon(raw) {
   if (!raw) return null;
@@ -266,7 +254,7 @@ function parsePriceManwon(raw) {
   const num = Number(str);
   if (!isNaN(num) && num > 0) {
     if (num >= 1000000) return Math.round(num / 10000); // KRW → 만원
-    return num; // already 만원
+    return num;
   }
 
   const eokMatch = str.match(/^(\d+)억(\d+)?$/);
