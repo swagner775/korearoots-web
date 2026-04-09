@@ -26,6 +26,7 @@ async function main() {
   let existingIds = new Set();
   if (!DRY_RUN) {
     console.log("[main] Fetching existing Airtable listing IDs...");
+  console.log(`[debug] AIRTABLE_TOKEN starts with: ${process.env.AIRTABLE_TOKEN?.slice(0, 8) ?? "UNDEFINED"}`);
     try {
       existingIds = await fetchExistingIds();
       console.log(`[main] Found ${existingIds.size} existing listings in Airtable\n`);
