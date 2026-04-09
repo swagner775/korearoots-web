@@ -175,10 +175,8 @@ export async function scrapeRegion(region) {
     if (articles.length === 0) break;
 
     for (const article of articles) {
-      const normalized = await normalizeArticle(article, region);
+      const normalized = normalizeArticle(article, region);
       if (normalized) listings.push(normalized);
-      // Small delay per article to avoid hammering photo endpoint
-      await sleep(300 + Math.random() * 200);
     }
 
     console.log(`[scrape] ${region.name} page ${page}/${totalPages} — ${articles.length} items, ${listings.length} kept`);
@@ -192,9 +190,8 @@ export async function scrapeRegion(region) {
 
 /**
  * Map a raw Naver Land article to our clean schema.
- * Fetches photos from the detail endpoint.
  */
-async function normalizeArticle(article, region) {
+function normalizeArticle(article, region) {
   try {
     const priceRaw =
       article.dealOrWarrantPrc ||
@@ -215,17 +212,9 @@ async function normalizeArticle(article, region) {
     );
     if (!articleNo) return null;
 
-    // Try to get a thumbnail from the list response first (fast)
-    let photos = [];
+    // Grab thumbnail from the list response (fast — no extra API call)
     const thumb = extractThumbnail(article);
-    if (thumb) photos = [thumb];
-
-    // If the listing has photos, fetch the full list from the detail endpoint
-    const photoCount = parseInt(article.articlePhotoCount || article.photoCount || "0", 10);
-    if (photoCount > 0 || !thumb) {
-      const detailPhotos = await fetchArticlePhotos(articleNo);
-      if (detailPhotos.length > 0) photos = detailPhotos;
-    }
+    const photos = thumb ? [thumb] : [];
 
     return {
       listingId: articleNo,
