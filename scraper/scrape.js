@@ -1,246 +1,133 @@
 import fetch from "node-fetch";
 import { MAX_PRICE_MANWON } from "./regions.js";
 
-const HEADERS_COMMON = {
+// Naver Land requires a logged-in session cookie.
+// Set NAVER_COOKIE in your environment:
+//   export NAVER_COOKIE="NID_AUT=xxxx; NID_SES=xxxx"
+// Get these from your browser's DevTools → Application → Cookies on new.land.naver.com
+const NAVER_COOKIE = process.env.NAVER_COOKIE || "";
+
+const HEADERS = {
   "User-Agent":
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
   "Accept": "application/json, text/plain, */*",
   "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8",
+  "Referer": "https://new.land.naver.com/",
+  ...(NAVER_COOKIE ? { Cookie: NAVER_COOKIE } : {}),
 };
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-// ─────────────────────────────────────────────
-// CARROT (당근마켓 / daangn.com)
-// ─────────────────────────────────────────────
+/**
+ * Fetch one page of Naver Land listings for a region.
+ * tradeType A1 = 매매 (sale)
+ */
+async function fetchPage(cortarNo, pageNo) {
+  const params = new URLSearchParams({
+    cortarNo,
+    tradeType: "A1",
+    priceMin: "0",
+    priceMax: String(MAX_PRICE_MANWON),
+    pageNo: String(pageNo),
+    rowNum: "20",
+    type: "list",
+  });
 
-const CARROT_REGION_CODES = {
-  Gangwon:  "gangwon",
-  Gyeongbuk: "gyeongsangbuk_do",
-  Gyeongnam: "gyeongsangnam_do",
-  Jeonbuk:  "jeollabuk_do",
-  Jeonnam:  "jeollanam_do",
-  Chungbuk: "chungcheongbuk_do",
-  Chungnam: "chungcheongnam_do",
-  Jeju:     "jeju",
-};
+  const url = `https://new.land.naver.com/api/articles?${params}`;
 
-async function scrapeCarrotRegion(region) {
-  const regionCode = CARROT_REGION_CODES[region.name];
-  if (!regionCode) return [];
+  const res = await fetch(url, { headers: HEADERS, timeout: 15000 });
 
-  // Carrot web API for real estate listings
-  const url = `https://www.daangn.com/api/v1/realty/articles?region=${regionCode}&trade_type=sale&page=1&per=20`;
-
-  try {
-    const res = await fetch(url, {
-      headers: {
-        ...HEADERS_COMMON,
-        "Referer": "https://www.daangn.com/",
-      },
-      timeout: 15000,
-    });
-
-    if (!res.ok) {
-      // Fallback: try the search API
-      return await scrapeCarrotSearch(region);
-    }
-
-    const json = await res.json();
-    const articles = json.data?.articles || json.articles || json.realty_articles || [];
-
-    return articles
-      .map((a) => normalizeCarrot(a, region))
-      .filter(Boolean)
-      .filter((l) => l.priceManwon <= MAX_PRICE_MANWON);
-  } catch (err) {
-    console.warn(`[carrot] Error for ${region.name}:`, err.message);
-    return await scrapeCarrotSearch(region);
+  if (res.status === 401 || res.status === 403) {
+    throw new Error(
+      `Naver Land auth required (${res.status}). Set NAVER_COOKIE env var.\n` +
+      "  Get cookies from: DevTools → Application → Cookies on new.land.naver.com\n" +
+      "  export NAVER_COOKIE=\"NID_AUT=xxxx; NID_SES=xxxx\""
+    );
   }
+
+  if (res.status === 429) {
+    console.warn(`[naver] Rate limited on page ${pageNo} for ${cortarNo} — waiting 5s...`);
+    await sleep(5000);
+    return fetchPage(cortarNo, pageNo); // retry once
+  }
+
+  if (!res.ok) {
+    throw new Error(`Naver Land HTTP ${res.status} for cortarNo=${cortarNo}`);
+  }
+
+  return res.json();
 }
 
-async function scrapeCarrotSearch(region) {
-  // Fallback: use Carrot's search endpoint
-  const query = encodeURIComponent(`${region.nameKo} 빈집 매매`);
-  const url = `https://www.daangn.com/api/v1/search/articles?query=${query}&category=realty&page=1&per=20`;
-
+function normalizeListing(article, region) {
   try {
-    const res = await fetch(url, {
-      headers: { ...HEADERS_COMMON, "Referer": "https://www.daangn.com/" },
-      timeout: 15000,
-    });
-
-    if (!res.ok) {
-      console.warn(`[carrot] Search also failed for ${region.name}: ${res.status}`);
-      return [];
-    }
-
-    const json = await res.json();
-    const articles = json.data?.articles || json.articles || [];
-
-    return articles
-      .map((a) => normalizeCarrot(a, region))
-      .filter(Boolean)
-      .filter((l) => l.priceManwon <= MAX_PRICE_MANWON);
-  } catch (err) {
-    console.warn(`[carrot] Search error for ${region.name}:`, err.message);
-    return [];
-  }
-}
-
-function normalizeCarrot(article, region) {
-  try {
-    const priceRaw = article.price || article.sale_price || article.trading_price || "";
+    const priceRaw = article.dealOrWarrantPrc || "";
     const priceManwon = parsePriceManwon(priceRaw);
     if (!priceManwon || priceManwon > MAX_PRICE_MANWON) return null;
 
-    const id = String(article.id || article.article_id || "");
+    const id = String(article.articleNo || "");
     if (!id) return null;
 
-    const thumb =
-      article.thumbnail_image?.url ||
-      article.first_image?.url ||
-      article.images?.[0]?.url ||
-      article.thumbnail ||
-      null;
+    const photos = [];
+    if (article.representativeImgUrl) photos.push(article.representativeImgUrl);
+    if (article.representativeImgThumb) photos.push(article.representativeImgThumb);
 
     return {
-      listingId: `carrot-${id}`,
-      title: article.title || article.name || "",
+      listingId: `naver-${id}`,
+      title: article.articleName || article.aptName || "",
       region: region.name,
-      address: article.region_name || article.address || region.nameKo,
-      propertyType: article.realty_type || article.category || "단독주택",
+      address: article.cortarAddress || article.buildingName || region.nameKo,
+      propertyType: article.realEstateTypeName || article.landCategoryCodeName || "단독주택",
       priceManwon,
       priceKrw: priceManwon * 10000,
       priceUsd: Math.round((priceManwon * 10000) / 1380),
       priceRaw: String(priceRaw),
-      floorInfo: "",
-      areaM2: parseFloat(article.area || "0") || 0,
-      direction: "",
-      description: article.body || article.content || article.description || "",
-      agentName: article.user?.nickname || article.writer?.nickname || "",
-      latitude: parseFloat(article.location?.lat || "0") || 0,
-      longitude: parseFloat(article.location?.lng || "0") || 0,
-      naverUrl: `https://www.daangn.com/articles/${id}`,
-      photos: thumb ? [thumb] : [],
+      floorInfo: article.floorInfo || "",
+      areaM2: parseFloat(article.area1 || article.area2 || "0") || 0,
+      direction: article.direction || "",
+      description: article.articleFeatureDesc || article.tagList?.join(", ") || "",
+      agentName: article.realtorName || "",
+      latitude: parseFloat(article.latitude || "0") || 0,
+      longitude: parseFloat(article.longitude || "0") || 0,
+      naverUrl: `https://new.land.naver.com/articles/${id}`,
+      photos,
       scrapedAt: new Date().toISOString(),
-      source: "Carrot (당근마켓)",
+      source: "Naver Land (네이버 부동산)",
     };
   } catch {
     return null;
   }
 }
-
-// ─────────────────────────────────────────────
-// PETER PAN (피터팬 / peterpanz.com)
-// ─────────────────────────────────────────────
-
-const PETERPAN_REGION_CODES = {
-  Gangwon:   "42",
-  Gyeongbuk: "47",
-  Gyeongnam: "48",
-  Jeonbuk:   "45",
-  Jeonnam:   "46",
-  Chungbuk:  "43",
-  Chungnam:  "44",
-  Jeju:      "50",
-};
-
-async function scrapePeterPanRegion(region) {
-  const regionCode = PETERPAN_REGION_CODES[region.name];
-  if (!regionCode) return [];
-
-  const url = `https://peterpanz.com/api/houses?filter_type=sale&location_code=${regionCode}&price_max=${MAX_PRICE_MANWON}&page=1&limit=20`;
-
-  try {
-    const res = await fetch(url, {
-      headers: {
-        ...HEADERS_COMMON,
-        "Referer": "https://peterpanz.com/",
-      },
-      timeout: 15000,
-    });
-
-    if (!res.ok) {
-      console.warn(`[peterpan] HTTP ${res.status} for ${region.name}`);
-      return [];
-    }
-
-    const json = await res.json();
-    const items = json.data?.houses || json.houses || json.items || json.result || [];
-
-    return items
-      .map((h) => normalizePeterPan(h, region))
-      .filter(Boolean)
-      .filter((l) => l.priceManwon <= MAX_PRICE_MANWON);
-  } catch (err) {
-    console.warn(`[peterpan] Error for ${region.name}:`, err.message);
-    return [];
-  }
-}
-
-function normalizePeterPan(house, region) {
-  try {
-    const priceRaw = house.price || house.sale_price || house.deposit || "";
-    const priceManwon = parsePriceManwon(priceRaw);
-    if (!priceManwon || priceManwon > MAX_PRICE_MANWON) return null;
-
-    const id = String(house.id || house.house_id || "");
-    if (!id) return null;
-
-    const thumb =
-      house.thumbnail ||
-      house.images?.[0] ||
-      house.photo_url ||
-      null;
-
-    return {
-      listingId: `peterpan-${id}`,
-      title: house.title || house.name || house.building_name || "",
-      region: region.name,
-      address: house.address || house.road_address || house.location || region.nameKo,
-      propertyType: house.house_type || house.building_type || "단독주택",
-      priceManwon,
-      priceKrw: priceManwon * 10000,
-      priceUsd: Math.round((priceManwon * 10000) / 1380),
-      priceRaw: String(priceRaw),
-      floorInfo: house.floor ? `${house.floor}층` : "",
-      areaM2: parseFloat(house.exclusive_area || house.area || "0") || 0,
-      direction: house.direction || "",
-      description: house.description || house.content || "",
-      agentName: house.agent_name || "",
-      latitude: parseFloat(house.lat || house.latitude || "0") || 0,
-      longitude: parseFloat(house.lng || house.longitude || "0") || 0,
-      naverUrl: `https://peterpanz.com/houses/${id}`,
-      photos: thumb ? [thumb] : [],
-      scrapedAt: new Date().toISOString(),
-      source: "Peter Pan (피터팬)",
-    };
-  } catch {
-    return null;
-  }
-}
-
-// ─────────────────────────────────────────────
-// MAIN EXPORT
-// ─────────────────────────────────────────────
 
 export async function scrapeRegion(region) {
-  console.log(`[scrape] ${region.name} — trying Carrot...`);
-  const carrotListings = await scrapeCarrotRegion(region);
-  console.log(`[scrape] ${region.name} — Carrot: ${carrotListings.length} listings`);
+  const listings = [];
+  let pageNo = 1;
+  let isMoreData = true;
 
-  await sleep(1500);
+  while (isMoreData) {
+    try {
+      const json = await fetchPage(region.cortarNo, pageNo);
+      const articles = json.articleList || [];
 
-  console.log(`[scrape] ${region.name} — trying Peter Pan...`);
-  const peterpanListings = await scrapePeterPanRegion(region);
-  console.log(`[scrape] ${region.name} — Peter Pan: ${peterpanListings.length} listings`);
+      for (const article of articles) {
+        const listing = normalizeListing(article, region);
+        if (listing) listings.push(listing);
+      }
 
-  await sleep(1000);
+      isMoreData = json.isMoreData === true && articles.length > 0;
+      pageNo++;
 
-  return [...carrotListings, ...peterpanListings];
+      if (isMoreData) await sleep(1000 + Math.random() * 500);
+    } catch (err) {
+      // Auth errors should bubble up and stop the whole run
+      if (err.message.includes("NAVER_COOKIE")) throw err;
+      console.warn(`[naver] Error on page ${pageNo} for ${region.name}:`, err.message);
+      break;
+    }
+  }
+
+  return listings;
 }
 
 // ─────────────────────────────────────────────
@@ -249,19 +136,21 @@ export async function scrapeRegion(region) {
 
 function parsePriceManwon(raw) {
   if (!raw) return null;
+  // Naver returns prices like "1억2,000", "8,500", "15,000"
   const str = String(raw).replace(/,/g, "").trim();
 
-  const num = Number(str);
-  if (!isNaN(num) && num > 0) {
-    if (num >= 1000000) return Math.round(num / 10000); // KRW → 만원
-    return num;
-  }
-
+  // "1억2000" or "1억"
   const eokMatch = str.match(/^(\d+)억(\d+)?$/);
   if (eokMatch) {
     const eok = parseInt(eokMatch[1], 10) * 10000;
     const man = parseInt(eokMatch[2] || "0", 10);
     return eok + man;
+  }
+
+  const num = Number(str);
+  if (!isNaN(num) && num > 0) {
+    if (num >= 1000000) return Math.round(num / 10000); // raw KRW → 만원
+    return num; // already in 만원
   }
 
   return null;

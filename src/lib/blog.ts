@@ -89,8 +89,8 @@ export const posts: BlogPost[] = [
         items: [
           "Minimum investment of ₩100,000,000 (approximately $75,000 USD)",
           "Investment must be made through a registered Korean 법인 (business entity)",
-          "The 법인 must be registered with KOTRA (Korea Trade-Investment Promotion Agency)",
-          "You must hold a KOTRA Foreign Investment Registration Certificate",
+          "The investment must be declared through government-approved channels and registered",
+          "You must hold a Foreign Investment Registration Certificate",
           "The business must show revenue activity within 2 years of the visa being issued",
         ],
       },
@@ -127,7 +127,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        content: "Once your KOTRA certificate is issued and all documents are in order, the D-8 application typically takes 4–8 weeks to process at a Korean consulate. KoreaRoots prepares and submits the full application on your behalf, tracks it through the system, and briefs you on approval.",
+        content: "Once your Foreign Investment Registration Certificate is issued and all documents are in order, the D-8 application typically takes 4–8 weeks to process at a Korean consulate. KoreaRoots prepares and submits the full application on your behalf, tracks it through the system, and briefs you on approval.",
       },
     ],
   },
@@ -176,11 +176,11 @@ export const posts: BlogPost[] = [
           "Find and shortlist a property (we handle this)",
           "Conduct title search and due diligence at the local registry office",
           "Register a Korean 법인 (business entity) in your name",
-          "Declare the investment with KOTRA and receive a Foreign Investment Registration Certificate",
+          "Declare the investment through government-approved channels and receive a Foreign Investment Registration Certificate",
           "Sign a purchase agreement with the seller",
           "Transfer the purchase price through a Korean bank account",
           "Register the title transfer at the district court registry (법원 등기소)",
-          "Apply for D-8 visa using your KOTRA certificate",
+          "Apply for D-8 visa using your Foreign Investment Registration Certificate",
         ],
       },
       {
@@ -189,7 +189,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        content: "For most of the process, no. Consultations, shortlisting, legal structuring, and KOTRA registration can all be handled remotely. We strongly recommend one in-person visit — ideally to view your shortlisted properties and sign the purchase agreement. However, with a Korean power of attorney (인감증명서), even signing can be delegated.",
+        content: "For most of the process, no. Consultations, shortlisting, legal structuring, and investment registration can all be handled remotely. We strongly recommend one in-person visit — ideally to view your shortlisted properties and sign the purchase agreement. However, with a Korean power of attorney (인감증명서), even signing can be delegated.",
       },
       {
         type: "heading",
@@ -385,9 +385,9 @@ export const posts: BlogPost[] = [
   },
   {
     id: "007",
-    slug: "kotra-molit-fdi-korean-government-agencies-explained",
-    title: "KOTRA, MOLIT, FDI: The Korean Government Agencies Behind Every Property Purchase",
-    excerpt: "Buying property in Korea as a foreigner involves three government acronyms you'll encounter repeatedly. Here's what each one does and why it matters to your investment.",
+    slug: "fdi-molit-korean-investment-registration-explained",
+    title: "FDI, MOLIT, and Investment Registration: How Foreign Investment Works in Korea",
+    excerpt: "Buying property in Korea as a foreigner involves a specific legal framework. Here's what FDI means, how investment registration works, and why MOLIT matters to your purchase.",
     date: "2025-04-22",
     readTime: 6,
     category: "Visa & Legal",
@@ -395,7 +395,7 @@ export const posts: BlogPost[] = [
     sections: [
       {
         type: "paragraph",
-        content: "When KoreaRoots walks a client through the purchase process, three acronyms come up over and over: FDI, KOTRA, and MOLIT. They're not interchangeable. Each one plays a specific role in making your investment legal, your visa possible, and your property yours. Here's what they actually do.",
+        content: "When KoreaRoots walks a client through the purchase process, two acronyms come up over and over: FDI and MOLIT. They're not interchangeable. Each one plays a specific role in making your investment legal, your visa possible, and your property yours. Here's what they actually do.",
       },
       {
         type: "heading",
@@ -407,19 +407,19 @@ export const posts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        content: "For your 빈집 purchase to qualify as FDI, it must meet three conditions: minimum ₩100M investment, structured through a registered Korean 법인, and declared to KOTRA before the purchase closes.",
+        content: "For your 빈집 purchase to qualify as FDI, it must meet three conditions: minimum ₩100M investment, structured through a registered Korean 법인, and declared through government-approved channels before the purchase closes.",
       },
       {
         type: "heading",
-        content: "KOTRA — Korea Trade-Investment Promotion Agency",
+        content: "Investment Registration — How Your FDI Gets Certified",
       },
       {
         type: "paragraph",
-        content: "KOTRA (대한무역투자진흥공사) is the government agency that registers and certifies your foreign investment. Think of them as the official stamp-of-approval authority. Once your investment is structured and your 법인 is registered, KOTRA issues a Foreign Investment Registration Certificate — the single most important document in your D-8 visa application. Without it, the immigration application cannot proceed.",
+        content: "Once your 법인 is registered and your investment is structured, it must be formally declared through government-approved channels. This process issues you a Foreign Investment Registration Certificate — the single most important document in your D-8 visa application. Without it, the immigration application cannot proceed.",
       },
       {
         type: "callout",
-        content: "KoreaRoots submits all KOTRA filings on your behalf and receives the registration certificate directly. You don't need to interact with KOTRA at all.",
+        content: "KoreaRoots coordinates all investment registration filings on your behalf through our partner law firms. You receive the certificate directly — no government offices to visit.",
       },
       {
         type: "heading",
@@ -438,10 +438,10 @@ export const posts: BlogPost[] = [
         content: "The sequence in a typical KoreaRoots transaction:",
         items: [
           "We register your 법인 with the Korean court registry",
-          "We declare the investment to KOTRA and receive your registration certificate",
+          "We declare the investment through government-approved channels and receive your registration certificate",
           "We sign the purchase agreement with the seller",
           "We register the title transfer at the MOLIT-supervised district registry",
-          "We submit your D-8 application to Korean Immigration using the KOTRA certificate",
+          "We submit your D-8 application to Korean Immigration using the registration certificate",
           "We pull renovation permits through MOLIT for the construction phase",
         ],
       },

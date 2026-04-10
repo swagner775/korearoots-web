@@ -176,7 +176,7 @@ export default async function PropertyDetailPage({ params }: { params: Promise<{
             <div className="flex flex-col gap-1">
               <p className="text-white font-semibold text-sm">D-8 Business Investment Visa Eligible</p>
               <p className="text-white/50 text-sm leading-relaxed">
-                This property meets the ₩100M minimum FDI threshold required for a D-8 business investment visa application. KoreaRoots handles the full legal structuring, KOTRA registration, and visa filing on your behalf.{" "}
+                This property meets the ₩100M minimum FDI threshold required for a D-8 business investment visa application. KoreaRoots handles the full legal structuring, investment registration, and visa filing on your behalf.{" "}
                 <Link href="/about#d8-visa" className="text-teal hover:text-teal/80 transition-colors">Learn more about the D-8 visa →</Link>
               </p>
             </div>

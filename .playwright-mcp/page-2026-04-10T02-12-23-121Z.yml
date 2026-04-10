@@ -1,0 +1,1464 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e7]:
+          - button "아파트" [ref=e8] [cursor=pointer]
+          - button "원∙투룸" [ref=e9] [cursor=pointer]
+          - button "빌라∙주택" [ref=e10] [cursor=pointer]
+          - button "오피스텔" [ref=e11] [cursor=pointer]
+          - button "상가∙사무실∙건물∙공장∙토지" [ref=e12] [cursor=pointer]
+        - link [ref=e13] [cursor=pointer]:
+          - /url: /
+          - img [ref=e14]
+        - generic [ref=e15]:
+          - link "피터팬 카페" [ref=e16] [cursor=pointer]:
+            - /url: https://cafe.naver.com/kig
+          - link "중개사 회원가입" [ref=e19] [cursor=pointer]:
+            - /url: /signup
+          - button "로그인 및 회원가입" [ref=e20] [cursor=pointer]:
+            - img [ref=e21]
+            - text: 로그인 및 회원가입
+      - generic [ref=e24]:
+        - generic [ref=e27]:
+          - textbox "검색어를 입력해주세요" [ref=e28]:
+            - /placeholder: 동, 지하철역, 대학교, 매물번호
+          - img [ref=e31]
+        - generic [ref=e34]:
+          - button "거래방식" [ref=e36] [cursor=pointer]:
+            - generic [ref=e37]: 거래방식
+            - img [ref=e39]
+          - button "융자금" [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: 융자금
+            - img [ref=e45]
+          - button "전용면적" [ref=e48] [cursor=pointer]:
+            - generic [ref=e49]: 전용면적
+            - img [ref=e51]
+          - button "층수" [ref=e54] [cursor=pointer]:
+            - generic [ref=e55]: 층수
+            - img [ref=e57]
+          - button "옵션" [ref=e60] [cursor=pointer]:
+            - generic [ref=e61]: 옵션
+            - img [ref=e63]
+        - button "전체필터" [ref=e66] [cursor=pointer]:
+          - generic [ref=e67]: 전체필터
+          - img [ref=e70]
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - generic [ref=e76]:
+          - textbox [ref=e77]
+          - img [ref=e81]
+        - generic [ref=e83]:
+          - generic [ref=e84]:
+            - button [ref=e85] [cursor=pointer]:
+              - img [ref=e87]
+            - generic [ref=e90]:
+              - button [ref=e91] [cursor=pointer]:
+                - img [ref=e93]
+              - button [ref=e95] [cursor=pointer]:
+                - img [ref=e97]
+          - generic [ref=e101] [cursor=pointer]: 평점
+        - generic [ref=e102]:
+          - img [ref=e104]
+          - generic [ref=e106]: 서울특별시 중구 태평로1가
+        - generic [ref=e108]:
+          - generic:
+            - generic:
+              - generic:
+                - generic "region/마포구" [ref=e137]:
+                  - generic [ref=e138] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.8"
+                    - button "마포구" [ref=e140]
+                    - button "88" [ref=e142]
+                - generic "region/광진구" [ref=e143]:
+                  - generic [ref=e144] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.3"
+                    - button "광진구" [ref=e146]
+                    - button "582" [ref=e148]
+                - generic "region/강남구" [ref=e149]:
+                  - generic [ref=e150] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.1"
+                    - button "강남구" [ref=e152]
+                    - button "2761" [ref=e154]
+                - generic "region/성북구" [ref=e155]:
+                  - generic [ref=e156] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.1"
+                    - button "성북구" [ref=e158]
+                    - button "150" [ref=e160]
+                - generic "region/동작구" [ref=e161]:
+                  - generic [ref=e162] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.1"
+                    - button "동작구" [ref=e164]
+                    - button "258" [ref=e166]
+                - generic "region/서초구" [ref=e167]:
+                  - generic [ref=e168] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.0"
+                    - button "서초구" [ref=e170]
+                    - button "236" [ref=e172]
+                - generic "region/구리시" [ref=e173]:
+                  - generic [ref=e174] [cursor=pointer]:
+                    - button "구리시" [ref=e176]
+                    - button "2" [ref=e178]
+                - generic "region/강동구" [ref=e179]:
+                  - generic [ref=e180] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.1"
+                    - button "강동구" [ref=e182]
+                    - button "248" [ref=e184]
+                - generic "region/중랑구" [ref=e185]:
+                  - generic [ref=e186] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.0"
+                    - button "중랑구" [ref=e188]
+                    - button "565" [ref=e190]
+                - generic "region/동대문구" [ref=e191]:
+                  - generic [ref=e192] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.2"
+                    - button "동대문구" [ref=e194]
+                    - button "161" [ref=e196]
+                - generic "region/송파구" [ref=e197]:
+                  - generic [ref=e198] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.3"
+                    - button "송파구" [ref=e200]
+                    - button "622" [ref=e202]
+                - generic "region/용산구" [ref=e203]:
+                  - generic [ref=e204] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.3"
+                    - button "용산구" [ref=e206]
+                    - button "335" [ref=e208]
+                - generic "region/종로구" [ref=e209]:
+                  - generic [ref=e210] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.0"
+                    - button "종로구" [ref=e212]
+                    - button "67" [ref=e214]
+                - generic "region/서대문구" [ref=e215]:
+                  - generic [ref=e216] [cursor=pointer]:
+                    - button "서대문구" [ref=e218]
+                    - button "28" [ref=e220]
+                - generic "region/강북구" [ref=e221]:
+                  - generic [ref=e222] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.5"
+                    - button "강북구" [ref=e224]
+                    - button "102" [ref=e226]
+                - generic "region/성동구" [ref=e227]:
+                  - generic [ref=e228] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.3"
+                    - button "성동구" [ref=e230]
+                    - button "163" [ref=e232]
+                - generic "region/중구" [ref=e233]:
+                  - generic [ref=e234] [cursor=pointer]:
+                    - generic:
+                      - generic:
+                        - img
+                        - generic: "4.0"
+                    - button "중구" [ref=e236]
+                    - button "70" [ref=e238]
+                - generic "region/노원구" [ref=e239]:
+                  - generic [ref=e240] [cursor=pointer]:
+                    - button "노원구" [ref=e242]
+                    - button "21" [ref=e244]
+                - generic "region/하남시" [ref=e245]:
+                  - generic [ref=e246] [cursor=pointer]:
+                    - button "하남시" [ref=e248]
+                    - button "8" [ref=e250]
+                - generic "region/남양주시" [ref=e251]:
+                  - generic [ref=e252] [cursor=pointer]:
+                    - button "남양주시" [ref=e254]
+                    - button "2" [ref=e256]
+                - generic "region/도봉구" [ref=e257]:
+                  - generic [ref=e258] [cursor=pointer]:
+                    - button "도봉구" [ref=e260]
+                    - button "2" [ref=e262]
+        - generic:
+          - generic [ref=e264]: 3km
+          - link "NAVER" [ref=e265] [cursor=pointer]:
+            - /url: https://ssl.pstatic.net/static/maps/mantle/notice/legal.html
+            - img "NAVER" [ref=e266]
+      - generic [ref=e267]:
+        - generic [ref=e269]:
+          - generic [ref=e270]:
+            - generic [ref=e271]: 6471개의 매물
+            - button "기본순" [ref=e273] [cursor=pointer]:
+              - img [ref=e275]
+              - generic [ref=e278]: 기본순
+          - generic [ref=e279]:
+            - generic [ref=e280]:
+              - generic [ref=e281]:
+                - generic [ref=e282]: 이 지역 추천 매물
+                - img [ref=e286] [cursor=pointer]
+              - generic [ref=e290]:
+                - generic [ref=e291] [cursor=pointer]:
+                  - generic [ref=e292]:
+                    - button [ref=e293]:
+                      - img [ref=e295]
+                    - generic [ref=e298]:
+                      - img [ref=e300]
+                      - img [ref=e302]
+                  - generic [ref=e308]:
+                    - generic [ref=e309]: 월세 1,000/80
+                    - generic [ref=e310]: 서대문구 충정로3가
+                    - generic [ref=e311]:
+                      - generic [ref=e312]: 상가주택
+                      - generic [ref=e315]: 방 2개
+                      - generic [ref=e317]: 고층
+                      - generic [ref=e321]:
+                        - text: 42.98m
+                        - superscript [ref=e322]: "2"
+                    - generic [ref=e323]: 충정로역 3분풀옵션 원룸깔끔 관리입주 협의 가능
+                  - generic [ref=e325]:
+                    - paragraph [ref=e327]: 직거래
+                    - paragraph [ref=e329]: 추천
+                - generic [ref=e330] [cursor=pointer]:
+                  - generic [ref=e331]:
+                    - button [ref=e332]:
+                      - img [ref=e334]
+                    - generic [ref=e337]:
+                      - img [ref=e339]
+                      - img [ref=e341]
+                  - generic [ref=e361]:
+                    - img "집주인 인증 마크" [ref=e363]
+                    - generic [ref=e365]: 전세 13억
+                    - generic [ref=e366]: 강남구 논현동
+                    - generic [ref=e367]:
+                      - generic [ref=e368]: 연립
+                      - generic [ref=e371]: 방 2개
+                      - generic [ref=e373]: 5층
+                      - generic [ref=e377]:
+                        - text: 24.73m
+                        - superscript [ref=e378]: "2"
+                    - generic [ref=e379]: "[집주인]아나하논현 채광 좋은 2룸"
+                  - generic [ref=e381]:
+                    - paragraph [ref=e383]: 직거래
+                    - paragraph [ref=e385]: 추천
+                    - generic [ref=e388]:
+                      - img [ref=e389]
+                      - paragraph [ref=e390]: 확인
+                - generic [ref=e391] [cursor=pointer]:
+                  - generic [ref=e392]:
+                    - button [ref=e393]:
+                      - img [ref=e395]
+                    - generic [ref=e398]:
+                      - img [ref=e400]
+                      - img [ref=e402]
+                  - generic [ref=e416]:
+                    - generic [ref=e417]: 월세 9,000/20
+                    - generic [ref=e418]: 강북구 미아동
+                    - generic [ref=e419]:
+                      - generic [ref=e420]: 다가구
+                      - generic [ref=e422]: 4층/-층
+                      - generic [ref=e424]:
+                        - generic [ref=e426]:
+                          - text: 217.36m
+                          - superscript [ref=e427]: "2"
+                        - text: /
+                        - generic [ref=e429]:
+                          - text: 120m
+                          - superscript [ref=e430]: "2"
+                    - generic [ref=e431]: 미아사거리역 도보 5분! 조용하고 살기 좋은 투룸 (LHSH 가능)
+                  - generic [ref=e433]:
+                    - paragraph [ref=e435]: 직거래
+                    - paragraph [ref=e437]: 추천
+                - generic [ref=e438] [cursor=pointer]:
+                  - generic [ref=e439]:
+                    - button [ref=e440]:
+                      - img [ref=e442]
+                    - generic [ref=e445]:
+                      - img [ref=e447]
+                      - img [ref=e449]
+                  - generic [ref=e469]:
+                    - img "집주인 인증 마크" [ref=e471]
+                    - generic [ref=e473]: 월세 9억 /200
+                    - generic [ref=e474]: 강남구 논현동
+                    - generic [ref=e475]:
+                      - generic [ref=e476]: 연립
+                      - generic [ref=e479]: 방 2개
+                      - generic [ref=e481]: 5층
+                      - generic [ref=e485]:
+                        - text: 24.73m
+                        - superscript [ref=e486]: "2"
+                    - generic [ref=e487]: "[집주인] 논현동 아나하논현 5층 2룸"
+                  - generic [ref=e489]:
+                    - paragraph [ref=e491]: 직거래
+                    - paragraph [ref=e493]: 추천
+                    - generic [ref=e496]:
+                      - img [ref=e497]
+                      - paragraph [ref=e498]: 확인
+                - generic [ref=e499] [cursor=pointer]:
+                  - generic [ref=e500]:
+                    - button [ref=e501]:
+                      - img [ref=e503]
+                    - generic [ref=e506]:
+                      - img [ref=e508]
+                      - img [ref=e510]
+                  - generic [ref=e522]:
+                    - img "집주인 인증 마크" [ref=e524]
+                    - generic [ref=e526]: 월세 2,000/58
+                    - generic [ref=e527]: 성북구 장위동
+                    - generic [ref=e528]:
+                      - generic [ref=e529]: 상가주택
+                      - generic [ref=e532]: 방 2개
+                      - generic [ref=e534]: 3층
+                      - generic [ref=e538]:
+                        - text: 42.98m
+                        - superscript [ref=e539]: "2"
+                    - generic [ref=e540]: 위치 최상 도로변 코너 상가주택 월세 매물o보증금 및 월세 조정 가능
+                  - generic [ref=e542]:
+                    - paragraph [ref=e544]: 직거래
+                    - paragraph [ref=e546]: 추천
+                    - generic [ref=e549]:
+                      - img [ref=e550]
+                      - paragraph [ref=e551]: 확인
+                - generic [ref=e552] [cursor=pointer]:
+                  - generic [ref=e553]:
+                    - button [ref=e554]:
+                      - img [ref=e556]
+                    - generic [ref=e559]:
+                      - img [ref=e561]
+                      - img [ref=e563]
+                  - generic [ref=e579]:
+                    - img "집주인 인증 마크" [ref=e581]
+                    - generic [ref=e583]: 전세 7억 5,000
+                    - generic [ref=e584]: 강남구 대치동
+                    - generic [ref=e585]:
+                      - generic [ref=e586]: 상가주택
+                      - generic [ref=e589]: 방 3개
+                      - generic [ref=e591]: 5층
+                      - generic [ref=e595]:
+                        - text: 148.77m
+                        - superscript [ref=e596]: "2"
+                    - generic [ref=e597]: "[급매] 전세 . 즉시입주 가능 대치동 학원가 넓은 주택 (월세전환가능)"
+                  - generic [ref=e599]:
+                    - paragraph [ref=e601]: 직거래
+                    - paragraph [ref=e603]: 추천
+                    - generic [ref=e606]:
+                      - img [ref=e607]
+                      - paragraph [ref=e608]: 확인
+                - generic [ref=e609] [cursor=pointer]:
+                  - generic [ref=e610]:
+                    - button [ref=e611]:
+                      - img [ref=e613]
+                    - generic [ref=e616]:
+                      - img [ref=e618]
+                      - img [ref=e620]
+                  - generic [ref=e630]:
+                    - img "집주인 인증 마크" [ref=e632]
+                    - generic [ref=e634]: 매매 1억 5,000
+                    - generic [ref=e635]: 강동구 성내동
+                    - generic [ref=e636]:
+                      - generic [ref=e637]: 빌라
+                      - generic [ref=e640]: 방 1개
+                      - generic [ref=e642]: 고층
+                      - generic [ref=e646]:
+                        - text: 25.88m
+                        - superscript [ref=e647]: "2"
+                    - generic [ref=e648]: 성내동 빌라 급매
+                  - generic [ref=e650]:
+                    - paragraph [ref=e652]: 직거래
+                    - paragraph [ref=e654]: 추천
+                    - generic [ref=e657]:
+                      - img [ref=e658]
+                      - paragraph [ref=e659]: 확인
+                - generic [ref=e660] [cursor=pointer]:
+                  - generic [ref=e661]:
+                    - button [ref=e662]:
+                      - img [ref=e664]
+                    - generic [ref=e667]:
+                      - img [ref=e669]
+                      - img [ref=e671]
+                  - generic [ref=e687]:
+                    - generic [ref=e688]: 매매 4억 9,500
+                    - generic [ref=e689]: 강남구 역삼동
+                    - generic [ref=e690]:
+                      - generic [ref=e691]: 빌라
+                      - generic [ref=e694]: 방 3개
+                      - generic [ref=e696]: 3층
+                      - generic [ref=e700]:
+                        - text: 55m
+                        - superscript [ref=e701]: "2"
+                    - generic [ref=e702]: 강남 최저가 급급매!!!!
+                  - generic [ref=e704]:
+                    - paragraph [ref=e706]: 직거래
+                    - paragraph [ref=e708]: 추천
+                - generic [ref=e709] [cursor=pointer]:
+                  - generic [ref=e710]:
+                    - button [ref=e711]:
+                      - img [ref=e713]
+                    - generic [ref=e716]:
+                      - img [ref=e718]
+                      - img [ref=e720]
+                  - generic [ref=e740]:
+                    - img "집주인 인증 마크" [ref=e742]
+                    - generic [ref=e744]: 전세 2억 8,000
+                    - generic [ref=e745]: 송파구 풍납동
+                    - generic [ref=e746]:
+                      - generic [ref=e747]: 원룸
+                      - generic [ref=e750]: 방 1개
+                      - generic [ref=e752]: 3층
+                      - generic [ref=e756]:
+                        - text: 30.77m
+                        - superscript [ref=e757]: "2"
+                    - generic [ref=e758]: 강동구청역 1분, 신축첫입주, 분리형1.5룸,즉시입주,전세대출O
+                  - generic [ref=e760]:
+                    - paragraph [ref=e762]: 직거래
+                    - paragraph [ref=e764]: 추천
+                    - generic [ref=e767]:
+                      - img [ref=e768]
+                      - paragraph [ref=e769]: 확인
+                - generic [ref=e770] [cursor=pointer]:
+                  - generic [ref=e771]:
+                    - button [ref=e772]:
+                      - img [ref=e774]
+                    - generic [ref=e777]:
+                      - img [ref=e779]
+                      - img [ref=e781]
+                  - generic [ref=e791]:
+                    - img "집주인 인증 마크" [ref=e793]
+                    - generic [ref=e795]: 전세 8,500
+                    - generic [ref=e796]: 동작구 상도동
+                    - generic [ref=e797]:
+                      - generic [ref=e798]: 원룸
+                      - generic [ref=e801]: 방 1개
+                      - generic [ref=e803]: 2층
+                      - generic [ref=e807]:
+                        - text: 16.53m
+                        - superscript [ref=e808]: "2"
+                    - generic [ref=e809]: LH SH 전세대출가능자 즉시 입주가능 7호선 숭실대입구역 3분거리
+                  - generic [ref=e811]:
+                    - paragraph [ref=e813]: 직거래
+                    - paragraph [ref=e815]: 추천
+                    - generic [ref=e818]:
+                      - img [ref=e819]
+                      - paragraph [ref=e820]: 확인
+                - generic [ref=e821] [cursor=pointer]:
+                  - generic [ref=e822]:
+                    - button [ref=e823]:
+                      - img [ref=e825]
+                    - generic [ref=e828]:
+                      - img [ref=e830]
+                      - img [ref=e832]
+                  - generic [ref=e843]:
+                    - img "집주인 인증 마크" [ref=e845]
+                    - generic [ref=e847]: 매매 27억
+                    - generic [ref=e848]: 서대문구 충정로2가
+                    - generic [ref=e849]:
+                      - generic [ref=e850]: 빌라
+                      - generic [ref=e853]: 방 21개
+                      - generic [ref=e855]: 4층
+                      - generic [ref=e859]:
+                        - text: 578.90m
+                        - superscript [ref=e860]: "2"
+                    - generic [ref=e861]: 서대문역 초 역세원 다세대주택 건물 매매
+                  - generic [ref=e863]:
+                    - paragraph [ref=e865]: 직거래
+                    - paragraph [ref=e867]: 추천
+                    - generic [ref=e870]:
+                      - img [ref=e871]
+                      - paragraph [ref=e872]: 확인
+                - generic [ref=e873] [cursor=pointer]:
+                  - generic [ref=e874]:
+                    - button [ref=e875]:
+                      - img [ref=e877]
+                    - generic [ref=e880]:
+                      - img [ref=e882]
+                      - img [ref=e884]
+                  - generic [ref=e895]:
+                    - generic [ref=e896]: 전세 1억 5,000
+                    - generic [ref=e897]: 광진구 구의동
+                    - generic [ref=e898]:
+                      - generic [ref=e899]: 원룸
+                      - generic [ref=e902]: 방 1개
+                      - generic [ref=e904]: 2층
+                      - generic [ref=e908]:
+                        - text: 13.27m
+                        - superscript [ref=e909]: "2"
+                    - generic [ref=e910]: 구의역 도보 5분 강변역 도보 7분, 2층 원룸 전세
+                  - generic [ref=e912]:
+                    - paragraph [ref=e914]: 직거래
+                    - paragraph [ref=e916]: 추천
+                  - generic [ref=e917]:
+                    - generic [ref=e918]:
+                      - img [ref=e919]
+                      - generic [ref=e921]: "4.0"
+                    - generic [ref=e922]: (2)
+                - generic [ref=e923] [cursor=pointer]:
+                  - generic [ref=e924]:
+                    - button [ref=e925]:
+                      - img [ref=e927]
+                    - generic [ref=e930]:
+                      - img [ref=e932]
+                      - img [ref=e934]
+                  - generic [ref=e946]:
+                    - img "집주인 인증 마크" [ref=e948]
+                    - generic [ref=e950]: 월세 2,000/90
+                    - generic [ref=e951]: 중구 중림동
+                    - generic [ref=e952]:
+                      - generic [ref=e953]: 다가구
+                      - generic [ref=e956]: 방 3개
+                      - generic [ref=e958]: 2층
+                      - generic [ref=e962]:
+                        - text: 49m
+                        - superscript [ref=e963]: "2"
+                    - generic [ref=e964]: 충정로역 5분이내
+                  - generic [ref=e966]:
+                    - paragraph [ref=e968]: 직거래
+                    - paragraph [ref=e970]: 추천
+                    - generic [ref=e973]:
+                      - img [ref=e974]
+                      - paragraph [ref=e975]: 확인
+                - generic [ref=e976] [cursor=pointer]:
+                  - generic [ref=e977]:
+                    - button [ref=e978]:
+                      - img [ref=e980]
+                    - generic [ref=e983]:
+                      - img [ref=e985]
+                      - img [ref=e987]
+                  - generic [ref=e998]:
+                    - img "집주인 인증 마크" [ref=e1000]
+                    - generic [ref=e1002]: 전세 1억 2,000
+                    - generic [ref=e1003]: 성북구 돈암동
+                    - generic [ref=e1004]:
+                      - generic [ref=e1005]: 다가구
+                      - generic [ref=e1008]: 방 2개
+                      - generic [ref=e1010]: 1층
+                      - generic [ref=e1014]:
+                        - text: 46.27m
+                        - superscript [ref=e1015]: "2"
+                    - generic [ref=e1016]: SH,중기청,LH 성신여대입구역 1번출구쪽, 1층, 넓은 방2개(투룸)
+                  - generic [ref=e1018]:
+                    - paragraph [ref=e1020]: 직거래
+                    - paragraph [ref=e1022]: 추천
+                    - generic [ref=e1025]:
+                      - img [ref=e1026]
+                      - paragraph [ref=e1027]: 확인
+                - generic [ref=e1028] [cursor=pointer]:
+                  - generic [ref=e1029]:
+                    - button [ref=e1030]:
+                      - img [ref=e1032]
+                    - generic [ref=e1035]:
+                      - img [ref=e1037]
+                      - img [ref=e1039]
+                  - generic [ref=e1056]:
+                    - img "집주인 인증 마크" [ref=e1058]
+                    - generic [ref=e1060]: 매매 7억 9,000
+                    - generic [ref=e1061]: 강북구 수유동
+                    - generic [ref=e1062]:
+                      - generic [ref=e1063]: 다가구
+                      - generic [ref=e1066]: 방 7개
+                      - generic [ref=e1068]: 2층(옥탑)
+                      - generic [ref=e1072]:
+                        - text: 181m
+                        - superscript [ref=e1073]: "2"
+                    - generic [ref=e1074]: 임대,주인세대 거주가능한 다가구입니다
+                  - generic [ref=e1076]:
+                    - paragraph [ref=e1078]: 직거래
+                    - paragraph [ref=e1080]: 추천
+                    - generic [ref=e1083]:
+                      - img [ref=e1084]
+                      - paragraph [ref=e1085]: 확인
+                - generic [ref=e1086] [cursor=pointer]:
+                  - generic [ref=e1087]:
+                    - button [ref=e1088]:
+                      - img [ref=e1090]
+                    - generic [ref=e1093]:
+                      - img [ref=e1095]
+                      - img [ref=e1097]
+                  - generic [ref=e1107]:
+                    - img "집주인 인증 마크" [ref=e1109]
+                    - generic [ref=e1111]: 매매 12억 5,000
+                    - generic [ref=e1112]: 용산구 원효로4가
+                    - generic [ref=e1113]:
+                      - generic [ref=e1114]: 빌라
+                      - generic [ref=e1117]: 방 2개
+                      - generic [ref=e1119]: 고층
+                      - generic [ref=e1123]:
+                        - text: 68m
+                        - superscript [ref=e1124]: "2"
+                    - generic [ref=e1125]: 한강 초근접, 용산 전자상가신용산역용산역 근접, 초중고 학교 근접
+                  - generic [ref=e1127]:
+                    - paragraph [ref=e1129]: 직거래
+                    - paragraph [ref=e1131]: 추천
+                    - generic [ref=e1134]:
+                      - img [ref=e1135]
+                      - paragraph [ref=e1136]: 확인
+                - generic [ref=e1137] [cursor=pointer]:
+                  - generic [ref=e1138]:
+                    - button [ref=e1139]:
+                      - img [ref=e1141]
+                    - generic [ref=e1144]:
+                      - img [ref=e1146]
+                      - img [ref=e1148]
+                  - generic [ref=e1160]:
+                    - img "집주인 인증 마크" [ref=e1162]
+                    - generic [ref=e1164]: 전세 1억
+                    - generic [ref=e1165]: 용산구 한강로1가
+                    - generic [ref=e1166]:
+                      - generic [ref=e1167]: 다가구
+                      - generic [ref=e1170]: 방 1개
+                      - generic [ref=e1172]: 4층
+                      - generic [ref=e1176]:
+                        - text: 30.03m
+                        - superscript [ref=e1177]: "2"
+                    - generic [ref=e1178]: 삼각지역 46호선 더블역세권 용리단길 3분 조용한 위치 원룸
+                  - generic [ref=e1180]:
+                    - paragraph [ref=e1182]: 직거래
+                    - paragraph [ref=e1184]: 추천
+                    - generic [ref=e1187]:
+                      - img [ref=e1188]
+                      - paragraph [ref=e1189]: 확인
+                - generic [ref=e1190] [cursor=pointer]:
+                  - generic [ref=e1191]:
+                    - button [ref=e1192]:
+                      - img [ref=e1194]
+                    - generic [ref=e1197]:
+                      - img [ref=e1199]
+                      - img [ref=e1201]
+                  - generic [ref=e1219]:
+                    - img "집주인 인증 마크" [ref=e1221]
+                    - generic [ref=e1223]: 전세 2억 6,500
+                    - generic [ref=e1224]: 강남구 대치동
+                    - generic [ref=e1225]:
+                      - generic [ref=e1226]: 빌라
+                      - generic [ref=e1229]: 방 1개
+                      - generic [ref=e1231]: 5층
+                      - generic [ref=e1235]:
+                        - text: 17.30m
+                        - superscript [ref=e1236]: "2"
+                    - generic [ref=e1237]: 분당선 한티역 도보5분 대치동 학원가 조용한 빌라 전세 1.5룸
+                  - generic [ref=e1239]:
+                    - paragraph [ref=e1241]: 직거래
+                    - paragraph [ref=e1243]: 추천
+                    - generic [ref=e1246]:
+                      - img [ref=e1247]
+                      - paragraph [ref=e1248]: 확인
+                - generic [ref=e1249] [cursor=pointer]:
+                  - generic [ref=e1250]:
+                    - button [ref=e1251]:
+                      - img [ref=e1253]
+                    - generic [ref=e1256]:
+                      - img [ref=e1258]
+                      - img [ref=e1260]
+                  - generic [ref=e1271]:
+                    - img "집주인 인증 마크" [ref=e1273]
+                    - generic [ref=e1275]: 매매 3억 3,000
+                    - generic [ref=e1276]: 용산구 용문동
+                    - generic [ref=e1277]:
+                      - generic [ref=e1278]: 빌라
+                      - generic [ref=e1281]: 방 1개
+                      - generic [ref=e1283]: 고층
+                      - generic [ref=e1287]:
+                        - text: 16.50m
+                        - superscript [ref=e1288]: "2"
+                    - generic [ref=e1289]: 용산 2억 이하 갭투자 마지막 매물 빨리 잡으세요.
+                  - generic [ref=e1291]:
+                    - paragraph [ref=e1293]: 직거래
+                    - paragraph [ref=e1295]: 추천
+                    - generic [ref=e1298]:
+                      - img [ref=e1299]
+                      - paragraph [ref=e1300]: 확인
+                - generic [ref=e1301] [cursor=pointer]:
+                  - generic [ref=e1302]:
+                    - button [ref=e1303]:
+                      - img [ref=e1305]
+                    - generic [ref=e1308]:
+                      - img [ref=e1310]
+                      - img [ref=e1312]
+                  - generic [ref=e1322]:
+                    - generic [ref=e1323]: 전세 2억
+                    - generic [ref=e1324]: 강남구 역삼동
+                    - generic [ref=e1325]:
+                      - generic [ref=e1326]: 원룸
+                      - generic [ref=e1329]: 방 1개
+                      - generic [ref=e1331]: 2층
+                      - generic [ref=e1335]:
+                        - text: 29.70m
+                        - superscript [ref=e1336]: "2"
+                    - generic [ref=e1337]: 전세대출버팀목 가) 역삼 인근 오픈형 원룸
+                  - generic [ref=e1339]:
+                    - paragraph [ref=e1341]: 직거래
+                    - paragraph [ref=e1343]: 추천
+                  - generic [ref=e1344]:
+                    - generic [ref=e1345]:
+                      - img [ref=e1346]
+                      - generic [ref=e1348]: "4.0"
+                    - generic [ref=e1349]: (1)
+            - generic [ref=e1350]:
+              - generic [ref=e1351]:
+                - generic [ref=e1352]: 이 지역 THE 클린매물
+                - img [ref=e1356] [cursor=pointer]
+              - generic [ref=e1360]:
+                - generic [ref=e1361] [cursor=pointer]:
+                  - generic [ref=e1362]:
+                    - button [ref=e1363]:
+                      - img [ref=e1365]
+                    - generic [ref=e1368]:
+                      - img [ref=e1370]
+                      - img [ref=e1372]
+                  - generic [ref=e1384]:
+                    - img "집주인 인증 마크" [ref=e1386]
+                    - generic [ref=e1388]: 전세 3억 8,000
+                    - generic [ref=e1389]: 중구 회현동2가
+                    - generic [ref=e1390]:
+                      - generic [ref=e1391]: 빌라
+                      - generic [ref=e1394]: 방 2개
+                      - generic [ref=e1396]: 저층
+                      - generic [ref=e1400]:
+                        - text: 28.19m
+                        - superscript [ref=e1401]: "2"
+                    - generic [ref=e1402]: 전세대출 보증보험 가능 채광좋은 신축 투룸
+                  - generic [ref=e1404]:
+                    - paragraph [ref=e1406]: 중개
+                    - generic [ref=e1409]:
+                      - img [ref=e1410]
+                      - paragraph [ref=e1411]: 확인
+                - generic [ref=e1412] [cursor=pointer]:
+                  - generic [ref=e1413]:
+                    - button [ref=e1414]:
+                      - img [ref=e1416]
+                    - generic [ref=e1419]:
+                      - img [ref=e1421]
+                      - img [ref=e1423]
+                  - generic [ref=e1429]:
+                    - img "집주인 인증 마크" [ref=e1431]
+                    - generic [ref=e1433]: 매매 7억 7,000
+                    - generic [ref=e1434]: 마포구 도화동
+                    - generic [ref=e1435]:
+                      - generic [ref=e1436]: 빌라
+                      - generic [ref=e1439]: 방 1개
+                      - generic [ref=e1441]: 5층
+                      - generic [ref=e1445]:
+                        - text: 15.25m
+                        - superscript [ref=e1446]: "2"
+                    - generic [ref=e1447]: 공덕지구 도화동 재개발 구역계 내 복층 원룸
+                  - generic [ref=e1449]:
+                    - paragraph [ref=e1451]: 중개
+                    - generic [ref=e1454]:
+                      - img [ref=e1455]
+                      - paragraph [ref=e1456]: 확인
+                - generic [ref=e1457] [cursor=pointer]:
+                  - generic [ref=e1458]:
+                    - button [ref=e1459]:
+                      - img [ref=e1461]
+                    - generic [ref=e1464]:
+                      - img [ref=e1466]
+                      - img [ref=e1468]
+                  - generic [ref=e1480]:
+                    - img "집주인 인증 마크" [ref=e1482]
+                    - generic [ref=e1484]: 월세 1,000/45
+                    - generic [ref=e1485]: 동작구 상도동
+                    - generic [ref=e1486]:
+                      - generic [ref=e1487]: 원룸
+                      - generic [ref=e1490]: 방 1개
+                      - generic [ref=e1492]: 저층
+                      - generic [ref=e1496]:
+                        - text: 19.84m
+                        - superscript [ref=e1497]: "2"
+                    - generic [ref=e1498]: 전입가능 상도역 가성비1등 서향
+                  - generic [ref=e1500]:
+                    - paragraph [ref=e1502]: 중개
+                    - generic [ref=e1505]:
+                      - img [ref=e1506]
+                      - paragraph [ref=e1507]: 확인
+                - generic [ref=e1508] [cursor=pointer]:
+                  - generic [ref=e1509]:
+                    - button [ref=e1510]:
+                      - img [ref=e1512]
+                    - generic [ref=e1515]:
+                      - img [ref=e1517]
+                      - img [ref=e1519]
+                  - generic [ref=e1529]:
+                    - img "집주인 인증 마크" [ref=e1531]
+                    - generic [ref=e1533]: 전세 2억 3,000
+                    - generic [ref=e1534]: 마포구 도화동
+                    - generic [ref=e1535]:
+                      - generic [ref=e1536]: 빌라
+                      - generic [ref=e1539]: 방 1개
+                      - generic [ref=e1541]: 고층
+                      - generic [ref=e1545]:
+                        - text: 17.18m
+                        - superscript [ref=e1546]: "2"
+                    - generic [ref=e1547]: 허그 전세대출 보증보험 0 공덕역세권 도보 5분거리 신축 첫입주
+                  - generic [ref=e1549]:
+                    - paragraph [ref=e1551]: 중개
+                    - generic [ref=e1554]:
+                      - img [ref=e1555]
+                      - paragraph [ref=e1556]: 확인
+                - generic [ref=e1557] [cursor=pointer]:
+                  - generic [ref=e1558]:
+                    - button [ref=e1559]:
+                      - img [ref=e1561]
+                    - generic [ref=e1564]:
+                      - img [ref=e1566]
+                      - img [ref=e1568]
+                  - generic [ref=e1581]:
+                    - img "집주인 인증 마크" [ref=e1583]
+                    - generic [ref=e1585]: 월세 1,000/40
+                    - generic [ref=e1586]: 동작구 상도동
+                    - generic [ref=e1587]:
+                      - generic [ref=e1588]: 원룸
+                      - generic [ref=e1591]: 방 1개
+                      - generic [ref=e1593]: 저층
+                      - generic [ref=e1597]:
+                        - text: 19.84m
+                        - superscript [ref=e1598]: "2"
+                    - generic [ref=e1599]: 전입가능 상도역 가성비1등 남동향
+                  - paragraph [ref=e1603]: 중개
+                - generic [ref=e1604] [cursor=pointer]:
+                  - generic [ref=e1605]:
+                    - button [ref=e1606]:
+                      - img [ref=e1608]
+                    - generic [ref=e1611]:
+                      - img [ref=e1613]
+                      - img [ref=e1615]
+                  - generic [ref=e1626]:
+                    - img "집주인 인증 마크" [ref=e1628]
+                    - generic [ref=e1630]: 전세 2억 3,000
+                    - generic [ref=e1631]: 마포구 도화동
+                    - generic [ref=e1632]:
+                      - generic [ref=e1633]: 빌라
+                      - generic [ref=e1636]: 방 1개
+                      - generic [ref=e1638]: 중층
+                      - generic [ref=e1642]:
+                        - text: 21.40m
+                        - superscript [ref=e1643]: "2"
+                    - generic [ref=e1644]: 허그 전세대출 보증보험 O 신축 풀옵션 가성비 분리형 원룸
+                  - generic [ref=e1646]:
+                    - paragraph [ref=e1648]: 중개
+                    - generic [ref=e1651]:
+                      - img [ref=e1652]
+                      - paragraph [ref=e1653]: 확인
+            - generic [ref=e1654]:
+              - generic [ref=e1655]:
+                - generic [ref=e1656]: 이 지역 좋은 방
+                - img [ref=e1660] [cursor=pointer]
+              - generic [ref=e1664]:
+                - generic [ref=e1665] [cursor=pointer]:
+                  - generic [ref=e1666]:
+                    - button [ref=e1667]:
+                      - img [ref=e1669]
+                    - generic [ref=e1672]:
+                      - img [ref=e1674]
+                      - img [ref=e1676]
+                  - generic [ref=e1689]:
+                    - generic [ref=e1690]: 월세 2억 5,000/30
+                    - generic [ref=e1691]: 광진구 화양동
+                    - generic [ref=e1692]:
+                      - generic [ref=e1693]: 빌라
+                      - generic [ref=e1696]: 방 2개
+                      - generic [ref=e1698]: 8층
+                      - generic [ref=e1702]:
+                        - text: 25.06m
+                        - superscript [ref=e1703]: "2"
+                    - generic [ref=e1704]: 모든대출 가능! 뻥뷰 7호선 어린이대공원 풀옵션 투룸!!!
+                  - generic [ref=e1706]:
+                    - paragraph [ref=e1708]: 중개
+                    - paragraph [ref=e1712]: 수수료 30% 할인
+                    - generic [ref=e1715]:
+                      - img [ref=e1716]
+                      - paragraph [ref=e1717]: 확인
+                  - generic [ref=e1718]:
+                    - generic [ref=e1719]:
+                      - img [ref=e1720]
+                      - generic [ref=e1722]: "4.0"
+                    - generic [ref=e1723]: (1)
+                - generic [ref=e1724] [cursor=pointer]:
+                  - generic [ref=e1725]:
+                    - button [ref=e1726]:
+                      - img [ref=e1728]
+                    - generic [ref=e1731]:
+                      - img [ref=e1733]
+                      - img [ref=e1735]
+                  - generic [ref=e1751]:
+                    - generic [ref=e1752]: 월세 5,000/200
+                    - generic [ref=e1753]: 동작구 상도1동
+                    - generic [ref=e1754]:
+                      - generic [ref=e1755]: 빌라
+                      - generic [ref=e1758]: 방 3개
+                      - generic [ref=e1760]: 4층
+                      - generic [ref=e1764]:
+                        - text: 74.51m
+                        - superscript [ref=e1765]: "2"
+                    - generic [ref=e1766]: 상도역 도보 5분 - 엘베 - 병렬주차 - 3룸2화
+                  - generic [ref=e1768]:
+                    - paragraph [ref=e1770]: 중개
+                    - paragraph [ref=e1774]: 수수료 10% 할인
+                - generic [ref=e1775] [cursor=pointer]:
+                  - generic [ref=e1776]:
+                    - button [ref=e1777]:
+                      - img [ref=e1779]
+                    - generic [ref=e1782]:
+                      - img [ref=e1784]
+                      - img [ref=e1786]
+                  - generic [ref=e1800]:
+                    - generic [ref=e1801]: 전세 1억 5,000
+                    - generic [ref=e1802]: 중랑구 중화동
+                    - generic [ref=e1803]:
+                      - generic [ref=e1804]: 빌라
+                      - generic [ref=e1807]: 방 1개
+                      - generic [ref=e1809]: 5층
+                      - generic [ref=e1813]:
+                        - text: 19.23m
+                        - superscript [ref=e1814]: "2"
+                    - generic [ref=e1815]: lh sh 모든대출가능 풀옵션 원룸 전세 신축급 보증보험가능
+                  - paragraph [ref=e1819]: 중개
+                - generic [ref=e1820] [cursor=pointer]:
+                  - generic [ref=e1821]:
+                    - img [ref=e1824]
+                    - button [ref=e1849]:
+                      - img [ref=e1851]
+                    - generic [ref=e1854]:
+                      - img [ref=e1856]
+                      - img [ref=e1858]
+                  - generic [ref=e1875]:
+                    - generic [ref=e1876]: 단기 150/142
+                    - generic [ref=e1877]: 강남구 삼성동
+                    - generic [ref=e1878]:
+                      - generic [ref=e1879]: 빌라
+                      - generic [ref=e1882]: 방 1개
+                      - generic [ref=e1884]: 3층
+                      - generic [ref=e1888]:
+                        - text: 37.32m
+                        - superscript [ref=e1889]: "2"
+                    - generic [ref=e1890]: 전입가능 강남구청역 선정릉역 방1 욕실1 풀옵션 리모델링
+                  - generic [ref=e1892]:
+                    - paragraph [ref=e1894]: 중개
+                    - paragraph [ref=e1898]: 수수료 50% 할인
+                    - generic [ref=e1901]:
+                      - img [ref=e1902]
+                      - paragraph [ref=e1903]: 확인
+                - generic [ref=e1904] [cursor=pointer]:
+                  - generic [ref=e1905]:
+                    - button [ref=e1906]:
+                      - img [ref=e1908]
+                    - generic [ref=e1911]:
+                      - img [ref=e1913]
+                      - img [ref=e1915]
+                  - generic [ref=e1923]:
+                    - generic [ref=e1924]: 월세 2,000/50
+                    - generic [ref=e1925]: 중랑구 면목동
+                    - generic [ref=e1926]:
+                      - generic [ref=e1927]: 다가구
+                      - generic [ref=e1930]: 방 2개
+                      - generic [ref=e1932]: 2층
+                      - generic [ref=e1936]:
+                        - text: 41.44m
+                        - superscript [ref=e1937]: "2"
+                    - generic [ref=e1938]: 방2 모두 큼. 조용한 주택가. 수리하고있는중
+                  - generic [ref=e1940]:
+                    - paragraph [ref=e1942]: 중개
+                    - generic [ref=e1945]:
+                      - img [ref=e1946]
+                      - paragraph [ref=e1947]: 확인
+                - generic [ref=e1948] [cursor=pointer]:
+                  - generic [ref=e1949]:
+                    - img [ref=e1952]
+                    - button [ref=e1977]:
+                      - img [ref=e1979]
+                    - generic [ref=e1982]:
+                      - img [ref=e1984]
+                      - img [ref=e1986]
+                  - generic [ref=e2001]:
+                    - generic [ref=e2002]: 월세 300/35
+                    - generic [ref=e2003]: 강북구 미아동
+                    - generic [ref=e2004]:
+                      - generic [ref=e2005]: 원룸
+                      - generic [ref=e2008]: 방 1개
+                      - generic [ref=e2010]: 2층
+                      - generic [ref=e2014]:
+                        - text: 16.53m
+                        - superscript [ref=e2015]: "2"
+                    - generic [ref=e2016]: 미아사거리 최저가 지상층 등장 l 엘베도 있음
+                  - paragraph [ref=e2020]: 중개
+                - generic [ref=e2021] [cursor=pointer]:
+                  - generic [ref=e2022]:
+                    - button [ref=e2023]:
+                      - img [ref=e2025]
+                    - generic [ref=e2028]:
+                      - img [ref=e2030]
+                      - img [ref=e2032]
+                  - generic [ref=e2051]:
+                    - generic [ref=e2052]: 전세 3억 3,300
+                    - generic [ref=e2053]: 동대문구 장안동
+                    - generic [ref=e2054]:
+                      - generic [ref=e2055]: 빌라
+                      - generic [ref=e2058]: 방 2개
+                      - generic [ref=e2060]: 중층
+                      - generic [ref=e2064]:
+                        - text: 43.60m
+                        - superscript [ref=e2065]: "2"
+                    - generic [ref=e2066]: 신축급 풀옵션 공간좋은 투룸
+                  - generic [ref=e2068]:
+                    - paragraph [ref=e2070]: 중개
+                    - paragraph [ref=e2074]: 수수료 10% 할인
+                    - generic [ref=e2077]:
+                      - img [ref=e2078]
+                      - paragraph [ref=e2079]: 확인
+                - generic [ref=e2080] [cursor=pointer]:
+                  - generic [ref=e2081]:
+                    - button [ref=e2082]:
+                      - img [ref=e2084]
+                    - generic [ref=e2087]:
+                      - img [ref=e2089]
+                      - img [ref=e2091]
+                  - generic [ref=e2103]:
+                    - generic [ref=e2104]: 월세 1억 /350
+                    - generic [ref=e2105]: 강남구 논현동
+                    - generic [ref=e2106]:
+                      - generic [ref=e2107]: 빌라
+                      - generic [ref=e2110]: 방 4개
+                      - generic [ref=e2112]: 4층
+                      - generic [ref=e2116]:
+                        - text: 117.95m
+                        - superscript [ref=e2117]: "2"
+                    - generic [ref=e2118]: 대형빌라,방4개.화장실2,내부완전올수리,샷시,바닥,천정,화장실.씽크대,즉
+                  - generic [ref=e2120]:
+                    - paragraph [ref=e2122]: 중개
+                    - generic [ref=e2125]:
+                      - img [ref=e2126]
+                      - paragraph [ref=e2127]: 확인
+                - generic [ref=e2128] [cursor=pointer]:
+                  - generic [ref=e2129]:
+                    - img [ref=e2132]
+                    - button [ref=e2157]:
+                      - img [ref=e2159]
+                    - generic [ref=e2162]:
+                      - img [ref=e2164]
+                      - img [ref=e2166]
+                  - generic [ref=e2180]:
+                    - generic [ref=e2181]: 단기 100/100
+                    - generic [ref=e2182]: 강남구 대치동
+                    - generic [ref=e2183]:
+                      - generic [ref=e2184]: 빌라
+                      - generic [ref=e2187]: 방 1개
+                      - generic [ref=e2189]: 3층
+                      - generic [ref=e2193]:
+                        - text: 29.20m
+                        - superscript [ref=e2194]: "2"
+                    - generic [ref=e2195]: ㅡ 신축급 원룸 원거실 ㅡ 사이즈 넓은 원룸 원거실
+                  - paragraph [ref=e2199]: 중개
+                - generic [ref=e2200] [cursor=pointer]:
+                  - generic [ref=e2201]:
+                    - button [ref=e2202]:
+                      - img [ref=e2204]
+                    - generic [ref=e2207]:
+                      - img [ref=e2209]
+                      - img [ref=e2211]
+                  - generic [ref=e2221]:
+                    - generic [ref=e2222]: 전세 2억 3,000
+                    - generic [ref=e2223]: 용산구 후암동
+                    - generic [ref=e2224]:
+                      - generic [ref=e2225]: 단독
+                      - generic [ref=e2228]: 방 2개
+                      - generic [ref=e2230]: 2층
+                      - generic [ref=e2234]:
+                        - text: 47.67m
+                        - superscript [ref=e2235]: "2"
+                    - generic [ref=e2236]: 후암동 평지 전용넓은 2룸 채광 통풍 우수 2월입주협의 전세자금대출가
+                  - generic [ref=e2238]:
+                    - paragraph [ref=e2240]: 중개
+                    - generic [ref=e2243]:
+                      - img [ref=e2244]
+                      - paragraph [ref=e2245]: 확인
+                - generic [ref=e2246] [cursor=pointer]:
+                  - generic [ref=e2247]:
+                    - img [ref=e2250]
+                    - button [ref=e2275]:
+                      - img [ref=e2277]
+                    - generic [ref=e2280]:
+                      - img [ref=e2282]
+                      - img [ref=e2284]
+                  - generic [ref=e2301]:
+                    - generic [ref=e2302]: 단기 200/130
+                    - generic [ref=e2303]: 강남구 대치동
+                    - generic [ref=e2304]:
+                      - generic [ref=e2305]: 빌라
+                      - generic [ref=e2308]: 방 1개
+                      - generic [ref=e2310]: 3층
+                      - generic [ref=e2314]:
+                        - text: 37.17m
+                        - superscript [ref=e2315]: "2"
+                    - generic [ref=e2316]: ㅣ선릉역5분ㅣ분리형 넓은사이즈 화이트톤
+                  - generic [ref=e2318]:
+                    - paragraph [ref=e2320]: 중개
+                    - paragraph [ref=e2324]: 수수료 50% 할인
+                    - generic [ref=e2327]:
+                      - img [ref=e2328]
+                      - paragraph [ref=e2329]: 확인
+                - generic [ref=e2330] [cursor=pointer]:
+                  - generic [ref=e2331]:
+                    - button [ref=e2332]:
+                      - img [ref=e2334]
+                    - generic [ref=e2337]:
+                      - img [ref=e2339]
+                      - img [ref=e2341]
+                  - generic [ref=e2357]:
+                    - generic [ref=e2358]: 월세 3,000/150
+                    - generic [ref=e2359]: 송파구 삼전동
+                    - generic [ref=e2360]:
+                      - generic [ref=e2361]: 다가구
+                      - generic [ref=e2364]: 방 3개
+                      - generic [ref=e2366]: 1층
+                      - generic [ref=e2370]:
+                        - text: 50.20m
+                        - superscript [ref=e2371]: "2"
+                    - generic [ref=e2372]: A. 수리된 쓰리룸 주차가능 즉시입주
+                  - generic [ref=e2374]:
+                    - paragraph [ref=e2376]: 중개
+                    - paragraph [ref=e2380]: 수수료 50% 할인
+                - generic [ref=e2381] [cursor=pointer]:
+                  - generic [ref=e2382]:
+                    - button [ref=e2383]:
+                      - img [ref=e2385]
+                    - generic [ref=e2388]:
+                      - img [ref=e2390]
+                      - img [ref=e2392]
+                  - generic [ref=e2398]:
+                    - generic [ref=e2399]: 월세 5,000/46
+                    - generic [ref=e2400]: 강남구 삼성동
+                    - generic [ref=e2401]:
+                      - generic [ref=e2402]: 빌라
+                      - generic [ref=e2405]: 방 1개
+                      - generic [ref=e2407]: 4층
+                      - generic [ref=e2411]:
+                        - text: 22.62m
+                        - superscript [ref=e2412]: "2"
+                    - generic [ref=e2413]: 깔끔하고 컨디션 좋은 원룸, 보증금 상향 가능
+                  - generic [ref=e2415]:
+                    - paragraph [ref=e2417]: 중개
+                    - generic [ref=e2420]:
+                      - img [ref=e2421]
+                      - paragraph [ref=e2422]: 확인
+                - generic [ref=e2423] [cursor=pointer]:
+                  - generic [ref=e2424]:
+                    - button [ref=e2425]:
+                      - img [ref=e2427]
+                    - generic [ref=e2430]:
+                      - img [ref=e2432]
+                      - img [ref=e2434]
+                  - generic [ref=e2454]:
+                    - generic [ref=e2455]: 월세 10/36
+                    - generic [ref=e2456]: 종로구 종로3가
+                    - generic [ref=e2457]:
+                      - generic [ref=e2458]: 원룸
+                      - generic [ref=e2461]: 방 1개
+                      - generic [ref=e2463]: 3층
+                      - generic [ref=e2467]:
+                        - text: 9.92m
+                        - superscript [ref=e2468]: "2"
+                    - generic [ref=e2469]: 개별에어컨 개인화장실 36만원 종로3가 010 6577 5133
+                  - paragraph [ref=e2473]: 직거래
+                - generic [ref=e2474] [cursor=pointer]:
+                  - generic [ref=e2475]:
+                    - img [ref=e2478]
+                    - button [ref=e2503]:
+                      - img [ref=e2505]
+                    - generic [ref=e2508]:
+                      - img [ref=e2510]
+                      - img [ref=e2512]
+                  - generic [ref=e2527]:
+                    - generic [ref=e2528]: 단기 100/60
+                    - generic [ref=e2529]: 강남구 역삼동
+                    - generic [ref=e2530]:
+                      - generic [ref=e2531]: 다가구
+                      - generic [ref=e2534]: 방 1개
+                      - generic [ref=e2536]: 중층
+                      - generic [ref=e2540]:
+                        - text: 21.70m
+                        - superscript [ref=e2541]: "2"
+                    - generic [ref=e2542]: oO풀옵션 전문가Oo 강남대로 초 인근 갓성비 오픈형 원룸
+                  - generic [ref=e2544]:
+                    - paragraph [ref=e2546]: 중개
+                    - paragraph [ref=e2550]: 수수료 30% 할인
+                    - generic [ref=e2553]:
+                      - img [ref=e2554]
+                      - paragraph [ref=e2555]: 확인
+                  - generic [ref=e2556]:
+                    - generic [ref=e2557]:
+                      - img [ref=e2558]
+                      - generic [ref=e2560]: "3.0"
+                    - generic [ref=e2561]: (1)
+                - generic [ref=e2562] [cursor=pointer]:
+                  - generic [ref=e2563]:
+                    - img [ref=e2566]
+                    - button [ref=e2605]:
+                      - img [ref=e2607]
+                    - generic [ref=e2610]:
+                      - img [ref=e2612]
+                      - img [ref=e2614]
+                  - generic [ref=e2624]:
+                    - generic [ref=e2625]: 월세 5,000/75
+                    - generic [ref=e2626]: 동작구 상도1동
+                    - generic [ref=e2627]:
+                      - generic [ref=e2628]: 연립
+                      - generic [ref=e2631]: 방 2개
+                      - generic [ref=e2633]: 3층
+                      - generic [ref=e2637]:
+                        - text: 43.72m
+                        - superscript [ref=e2638]: "2"
+                    - generic [ref=e2639]: ++햇살 가득 투룸++이런집 어디 또 없나++
+                  - generic [ref=e2641]:
+                    - paragraph [ref=e2643]: 중개
+                    - paragraph [ref=e2647]: 수수료 100% 할인
+                - generic [ref=e2648] [cursor=pointer]:
+                  - generic [ref=e2649]:
+                    - button [ref=e2650]:
+                      - img [ref=e2652]
+                    - generic [ref=e2655]:
+                      - img [ref=e2657]
+                      - img [ref=e2659]
+                  - generic [ref=e2669]:
+                    - generic [ref=e2670]: 전세 1억 4,000
+                    - generic [ref=e2671]: 광진구 중곡동
+                    - generic [ref=e2672]:
+                      - generic [ref=e2673]: 다가구
+                      - generic [ref=e2676]: 방 1개
+                      - generic [ref=e2678]: 3층
+                      - generic [ref=e2682]:
+                        - text: 20.95m
+                        - superscript [ref=e2683]: "2"
+                    - generic [ref=e2684]: 중곡동) 역세권 중곡역6분거리 준신축 1.5룸 전세 1.4억
+                  - paragraph [ref=e2688]: 직거래
+                - generic [ref=e2689] [cursor=pointer]:
+                  - generic [ref=e2690]:
+                    - button [ref=e2691]:
+                      - img [ref=e2693]
+                    - generic [ref=e2696]:
+                      - img [ref=e2698]
+                      - img [ref=e2700]
+                  - generic [ref=e2712]:
+                    - generic [ref=e2713]: 전세 2억 3,000
+                    - generic [ref=e2714]: 동작구 상도동
+                    - generic [ref=e2715]:
+                      - generic [ref=e2716]: 단독
+                      - generic [ref=e2719]: 방 2개
+                      - generic [ref=e2721]: 고층
+                      - generic [ref=e2725]:
+                        - text: 39.67m
+                        - superscript [ref=e2726]: "2"
+                    - generic [ref=e2727]: 좋은매물 구조 좋은 사이즈 큰 투룸입니다.
+                  - generic [ref=e2729]:
+                    - paragraph [ref=e2731]: 중개
+                    - paragraph [ref=e2735]: 수수료 30% 할인
+                    - generic [ref=e2738]:
+                      - img [ref=e2739]
+                      - paragraph [ref=e2740]: 확인
+                - generic [ref=e2741] [cursor=pointer]:
+                  - generic [ref=e2742]:
+                    - button [ref=e2743]:
+                      - img [ref=e2745]
+                    - generic [ref=e2748]:
+                      - img [ref=e2750]
+                      - img [ref=e2752]
+                  - generic [ref=e2763]:
+                    - generic [ref=e2764]: 월세 5,000/50
+                    - generic [ref=e2765]: 광진구 화양동
+                    - generic [ref=e2766]:
+                      - generic [ref=e2767]: 빌라
+                      - generic [ref=e2770]: 방 1개
+                      - generic [ref=e2772]: 7층
+                      - generic [ref=e2776]:
+                        - text: 19.96m
+                        - superscript [ref=e2777]: "2"
+                    - generic [ref=e2778]: 세종대 건대 도보권 어린이대공원역 바로앞 고층 오피스텔 구조
+                  - paragraph [ref=e2782]: 중개
+                - generic [ref=e2783] [cursor=pointer]:
+                  - generic [ref=e2784]:
+                    - button [ref=e2785]:
+                      - img [ref=e2787]
+                    - generic [ref=e2790]:
+                      - img [ref=e2792]
+                      - img [ref=e2794]
+                  - generic [ref=e2812]:
+                    - generic [ref=e2813]: 월세 1억 /195
+                    - generic [ref=e2814]: 강남구 역삼동
+                    - generic [ref=e2815]:
+                      - generic [ref=e2816]: 빌라
+                      - generic [ref=e2819]: 방 3개
+                      - generic [ref=e2821]: 4층
+                      - generic [ref=e2825]:
+                        - text: 50.52m
+                        - superscript [ref=e2826]: "2"
+                    - generic [ref=e2827]: 주택가 지상 3룸화2개, 거실맞벽구조, 베란다, 개별창고, 주차가능
+                  - generic [ref=e2829]:
+                    - paragraph [ref=e2831]: 중개
+                    - generic [ref=e2834]:
+                      - img [ref=e2835]
+                      - paragraph [ref=e2836]: 확인
+                - generic [ref=e2837] [cursor=pointer]:
+                  - generic [ref=e2838]:
+                    - img [ref=e2841]
+                    - button [ref=e2866]:
+                      - img [ref=e2868]
+                    - generic [ref=e2871]:
+                      - img [ref=e2873]
+                      - img [ref=e2875]
+                  - generic [ref=e2894]:
+                    - generic [ref=e2895]: 단기 390/369
+                    - generic [ref=e2896]: 강남구 삼성동
+                    - generic [ref=e2897]:
+                      - generic [ref=e2898]: 빌라
+                      - generic [ref=e2901]: 방 3개
+                      - generic [ref=e2903]: 6층
+                      - generic [ref=e2907]:
+                        - text: 75.49m
+                        - superscript [ref=e2908]: "2"
+                    - generic [ref=e2909]: 전입가능 삼성중앙역 방3 욕실2 풀옵션 리모델링
+                  - generic [ref=e2911]:
+                    - paragraph [ref=e2913]: 중개
+                    - paragraph [ref=e2917]: 수수료 50% 할인
+                    - generic [ref=e2920]:
+                      - img [ref=e2921]
+                      - paragraph [ref=e2922]: 확인
+                  - generic [ref=e2923]:
+                    - generic [ref=e2924]:
+                      - img [ref=e2925]
+                      - generic [ref=e2927]: "4.0"
+                    - generic [ref=e2928]: (1)
+                - generic [ref=e2929] [cursor=pointer]:
+                  - generic [ref=e2930]:
+                    - img [ref=e2933]
+                    - button [ref=e2958]:
+                      - img [ref=e2960]
+                    - generic [ref=e2963]:
+                      - img [ref=e2965]
+                      - img [ref=e2967]
+                  - generic [ref=e2985]:
+                    - generic [ref=e2986]: 단기 200/150
+                    - generic [ref=e2987]: 강남구 역삼동
+                    - generic [ref=e2988]:
+                      - generic [ref=e2989]: 빌라
+                      - generic [ref=e2992]: 방 2개
+                      - generic [ref=e2994]: 2층
+                      - generic [ref=e2998]:
+                        - text: 48.65m
+                        - superscript [ref=e2999]: "2"
+                    - generic [ref=e3000]: 단기전문 친절상담 가성비좋은 투룸원거실
+                  - generic [ref=e3002]:
+                    - paragraph [ref=e3004]: 중개
+                    - paragraph [ref=e3008]: 수수료 50% 할인
+                    - generic [ref=e3011]:
+                      - img [ref=e3012]
+                      - paragraph [ref=e3013]: 확인
+                - generic [ref=e3014] [cursor=pointer]:
+                  - generic [ref=e3015]:
+                    - img [ref=e3018]
+                    - button [ref=e3043]:
+                      - img [ref=e3045]
+                    - generic [ref=e3048]:
+                      - img [ref=e3050]
+                      - img [ref=e3052]
+                  - generic [ref=e3068]:
+                    - generic [ref=e3069]: 단기 200/120
+                    - generic [ref=e3070]: 서초구 반포동
+                    - generic [ref=e3071]:
+                      - generic [ref=e3072]: 빌라
+                      - generic [ref=e3075]: 방 2개
+                      - generic [ref=e3077]: 5층
+                      - generic [ref=e3081]:
+                        - text: 56m
+                        - superscript [ref=e3082]: "2"
+                    - generic [ref=e3083]: 연중무휴 신논현 저렴한 투룸 단기 풀옵션 초특가
+                  - generic [ref=e3085]:
+                    - paragraph [ref=e3087]: 중개
+                    - paragraph [ref=e3091]: 수수료 50% 할인
+                    - generic [ref=e3094]:
+                      - img [ref=e3095]
+                      - paragraph [ref=e3096]: 확인
+                  - generic [ref=e3097]:
+                    - generic [ref=e3098]:
+                      - img [ref=e3099]
+                      - generic [ref=e3101]: "4.0"
+                    - generic [ref=e3102]: (1)
+                - generic [ref=e3103] [cursor=pointer]:
+                  - generic [ref=e3104]:
+                    - button [ref=e3105]:
+                      - img [ref=e3107]
+                    - generic [ref=e3110]:
+                      - img [ref=e3112]
+                      - img [ref=e3114]
+                  - generic [ref=e3127]:
+                    - img "집주인 인증 마크" [ref=e3129]
+                    - generic [ref=e3131]: 월세 1억 5,000/35
+                    - generic [ref=e3132]: 송파구 가락동
+                    - generic [ref=e3133]:
+                      - generic [ref=e3134]: 단독
+                      - generic [ref=e3137]: 방 1개
+                      - generic [ref=e3139]: 2층
+                      - generic [ref=e3143]:
+                        - text: 29.75m
+                        - superscript [ref=e3144]: "2"
+                    - generic [ref=e3145]: LH, 올수리 가락동 풀옵션, 넓은 분리형 원룸 오금역 7분거리
+                  - generic [ref=e3147]:
+                    - paragraph [ref=e3149]: 중개
+                    - generic [ref=e3152]:
+                      - img [ref=e3153]
+                      - paragraph [ref=e3154]: 확인
+          - region "동네생활백서 스포트라이트":
+            - status [ref=e3155]:
+              - generic [ref=e3156]: 신규오픈! 실거주 후기를 확인해 보세요
+              - button "공지 닫기" [ref=e3157] [cursor=pointer]:
+                - img [ref=e3158]
+            - generic [ref=e3160]:
+              - generic [ref=e3161]: 함께 사는 이웃들의 솔직한 경험,
+              - img "동네생활백서" [ref=e3162]
+              - generic [ref=e3164] [cursor=pointer]: 보러가기
+              - button "배너 닫기" [ref=e3166] [cursor=pointer]:
+                - img [ref=e3167]
+        - button [ref=e3169] [cursor=pointer]:
+          - img [ref=e3171]
+    - generic:
+      - generic:
+        - generic:
+          - iframe [ref=e3178]:
+            - generic [ref=f11e1]:
+              - link [ref=f11e2] [cursor=pointer]:
+                - /url: https://googleads.g.doubleclick.net/pcs/click?xai=AKAOjstmuKdsGURBZGfgeOe07n1WRrTpO767VeDLBYOeU43V8GlI4cQKkIZ-KIIqgmFJ2vJ1ZyAOUmQyrXUaii9TD8D8_AnL9vrvv6y_AmYqV29M1HPC7xeih-vZEWPTPRyrP6KCFnPRyE33yKdBbQEv8MiaC453cpzT8X_z8ruGg5lhvCOAioUJ75IfIeASyxBzhUpAdSL_10dA764kHf5YG38d8VRY_AWtVZZSsBgRkytcv-viNSIIMBAhBhAYNT-cNoYKvSfvibNM60IUChCTQ5RiTW6zjcvja9XgbUC4au4aWAcVo42P77sO_hlFXRbM2IGkXi0HvRCd4wBMcKQtNBrTYTKtmP_DqKY1lO-chIHl3ne3CDxWw4UtnUJdrzpsL3armUTpfwv47i2n1IWh7fOGbN0lcvQZ8ImSDr8tsdzzNQefTM667kxLQK_pfsYNBSxGCIGGRtgJr9NYY5HqSUrzHWv-1f9P7vCS2A&sai=AMfl-YTQ-AqD2iunn9oRL5wq89bTTNQYg4bb9Rgs0stuH8cwvMOo_bPUnxOM4gDSN7ouMO0wb4b8HfD6gzpc4aixZsV4WNKVorYFM_IzLGgFaT-_VsrhHVwrP4pt8zZzbdGoi_wFx6VcOiZ0UyfGDwOqY0jIemSerC6njvLxUkL8g4dOEJaIh32vi31RSY2_Ts5hm0YKQ3SD98LZuZTajR1K3xETwu-oRrn7-omnF2WiI84rm-q8rg7sAiPSEqeF1ynoBJ9ichv0wIyVZFyovp-ADJdxLIg7_HEK3RvJ2Lw_0eqr6CdscKp-K5epz4zkpaLKqKVOOxbjsw&sig=Cg0ArKJSzD1rEYpRS6P5&fbs_aeid=%5Bgw_fbsaeid%5D&adurl=https://peterpanclass.com%3Futm_source%3Dpeterpan%26utm_medium%3Dbanner%26utm_campaign%3Dpeterpanclass_general_1230&nm=1
+              - img [ref=f11e6] [cursor=pointer]
+              - button [ref=f11e8] [cursor=pointer]:
+                - img [ref=f11e9]
+          - generic:
+            - button "오늘 하루 보지 않기" [ref=e3179] [cursor=pointer]
+            - button "닫기" [ref=e3180] [cursor=pointer]
+  - text:     
+  - iframe
+  - button "피터팬 고객센터 Chat Button" [ref=e3183] [cursor=pointer]:
+    - generic [ref=e3184]: 피터팬 고객센터 Chat Button

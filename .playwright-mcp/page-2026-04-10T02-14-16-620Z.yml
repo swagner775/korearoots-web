@@ -1,0 +1,10 @@
+- generic [ref=e2]:
+  - img "피터팬의 좋은방 구하기 로고" [ref=e3]
+  - generic [ref=e4]:
+    - generic [ref=e5]: 404, 페이지를 찾을 수 없습니다.
+    - generic [ref=e6]:
+      - text: 존재하지 않거나 주소가 변경, 삭제되어 찾을 수 없습니다.
+      - text: 페이지 주소를 다시 확인해주세요.
+      - text: 또는 메인 홈으로 이동해 주세요.
+  - link "메인 홈 이동하기" [ref=e8] [cursor=pointer]:
+    - /url: /

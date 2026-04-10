@@ -33,7 +33,7 @@ const phases: {
       "Property shortlist reviewed & site visits arranged",
       "In-person or virtual meetings with sellers",
       "Due diligence, title search & offer accepted",
-      <><Term href="/about#fdi">FDI</Term> structured & registered with <Term href="/about#kotra">KOTRA</Term></>,
+      <><Term href="/about#fdi">FDI</Term> structured & registered through government-approved channels</>,
       <><Term href="/about#d8-visa">D-8</Term> visa application submitted</>,
     ],
   },

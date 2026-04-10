@@ -1,0 +1,1 @@
+[     436ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://api.peterpanz.com/houses/area/pc?si=%EC%B6%A9%EC%B2%AD%EB%82%A8%EB%8F%84&filter=contractType;[%22%EB%A7%A4%EB%A7%A4%22]&pageSize=10&pageIndex=1&response_version=5.3&filter_version=5.1&order_by=recent:0

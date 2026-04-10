@@ -29,7 +29,7 @@ const services = [
     includes: [
       "Korean 법인 company registration",
       "Foreign investment declaration",
-      "KOTRA registration & certificate",
+      "Investment registration via partner law firms & government-approved channels",
       "Bank account setup guidance",
     ],
     price: "$2,400",
@@ -103,7 +103,7 @@ const packages = [
     features: [
       "Property search & shortlist (up to 5)",
       "Title & due diligence report",
-      "FDI structuring & KOTRA registration",
+      "FDI structuring & investment registration",
       "Korean 법인 entity setup",
       "D-8 visa application",
     ],

@@ -30,7 +30,7 @@ const steps = [
     number: "02",
     icon: "📋",
     title: "Structure Your Investment",
-    body: <>Our advisory team structures your investment to meet <Term href="/about#molit">MOLIT</Term> and <Term href="/about#kotra">KOTRA</Term> requirements, conducts a full title search, and prepares the foreign investment declaration.</>,
+    body: <>Our advisory team structures your investment to meet <Term href="/about#molit">MOLIT</Term> requirements, conducts a full title search, and prepares the foreign investment declaration — coordinated through our partner law firms and government-approved channels.</>,
     detail: <>Minimum investment threshold: ₩100,000,000 (approx. $75,000 USD) to qualify for <Term href="/about#d8-visa">D-8 visa</Term> eligibility.</>,
   },
   {
@@ -44,7 +44,7 @@ const steps = [
     number: "04",
     icon: "🛂",
     title: "D-8 Visa Application",
-    body: <>With your <Term href="/about#kotra">KOTRA</Term>-registered investment in hand, we prepare and submit your <Term href="/about#d8-visa">D-8 business investment visa</Term> application to the Korean Immigration Service.</>,
+    body: <>With your registered investment in hand, we prepare and submit your <Term href="/about#d8-visa">D-8 business investment visa</Term> application to the Korean Immigration Service.</>,
     detail: <><Term href="/about#d8-visa">D-8 visa</Term> grants 2-year residency, renewable, with a path to <Term href="/about#f2-visa">F-2 long-term residency</Term>.</>,
   },
   {

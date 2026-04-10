@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "About — KoreaRoots",
   description:
-    "Understand the key terms behind Korean rural property investment — 빈집, FDI, MOLIT, KOTRA, D-8 visa, F-2 residency, and STR explained in plain English.",
+    "Understand the key terms behind Korean rural property investment — 빈집, FDI, MOLIT, D-8 visa, F-2 residency, and STR explained in plain English.",
 };
 
 const glossary = [
@@ -50,19 +50,6 @@ In practice, you won't deal with MOLIT directly. Your Korean attorney and our ad
     tagColor: "text-white/60 border-white/20 bg-white/5",
   },
   {
-    id: "kotra",
-    term: "KOTRA — Korea Trade-Investment Promotion Agency",
-    pronunciation: "koh-trah",
-    short: "The agency that registers and certifies your foreign investment",
-    body: `KOTRA (대한무역투자진흥공사) is a Korean government agency whose job is to attract and support foreign investment into Korea. They act as the official registrar for FDI.
-
-Once your investment is structured and the purchase is complete, KOTRA issues a Foreign Investment Registration Certificate. This certificate is the key document you need to apply for the D-8 visa — without it, the immigration application cannot proceed.
-
-Think of KOTRA registration as the stamp that says: "This person made a legitimate, qualifying investment in Korea."`,
-    tag: "Government",
-    tagColor: "text-white/60 border-white/20 bg-white/5",
-  },
-  {
     id: "d8-visa",
     term: "D-8 Visa — Business Investment Visa",
     pronunciation: null,
@@ -70,7 +57,7 @@ Think of KOTRA registration as the stamp that says: "This person made a legitima
     body: `The D-8 visa is South Korea's business investment visa, issued to foreigners who make a qualifying FDI investment in a Korean company.
 
 Key facts:
-• Requires a minimum ₩100,000,000 investment registered with KOTRA
+• Requires a minimum ₩100,000,000 investment registered through government-approved channels
 • Grants 2-year residency in South Korea, renewable
 • Allows you to manage and operate your business in Korea
 • After maintaining the visa, you can apply for F-2 long-term resident status (see below)

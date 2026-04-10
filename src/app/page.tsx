@@ -42,7 +42,10 @@ function HeroSection() {
             KoreaRoots connects Western investors with Korea&apos;s{" "}
             <span className="text-white/90 font-medium">빈집 (bin-jip)</span>{" "}
             abandoned rural properties — turning forgotten homes into thriving
-            businesses and a pathway to Korean residency.
+            businesses and a pathway to Korean residency. Whether you want to{" "}
+            <span className="text-white/80">retire in Korea</span>, build a{" "}
+            <span className="text-white/80">countryside life in Korea</span>, or simply{" "}
+            <span className="text-white/80">buy property in Korea</span>, we handle everything end-to-end.
           </p>
 
           {/* Stats */}
@@ -105,7 +108,7 @@ const cards = [
   {
     icon: "📋",
     title: "End-to-End FDI Advisory",
-    body: "We handle legal due diligence, MOLIT filings, and KOTRA registration so your investment is fully compliant.",
+    body: "We handle legal due diligence, MOLIT filings, and investment registration through government-approved channels so your investment is fully compliant.",
   },
   {
     icon: "🛂",
