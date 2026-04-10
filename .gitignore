@@ -42,3 +42,6 @@ next-env.d.ts
 
 # scraper
 scraper/node_modules
+
+# playwright mcp
+.playwright-mcp/
