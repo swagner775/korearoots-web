@@ -431,6 +431,15 @@ export default function ConsultationPage() {
           ))}
         </div>
 
+        {/* Technical issues fallback */}
+        <p className="text-center text-white/25 text-xs pb-4">
+          Experiencing technical issues?{" "}
+          <a href="mailto:hello@korearoots.com" className="text-white/40 hover:text-teal transition-colors underline underline-offset-2">
+            hello@korearoots.com
+          </a>
+          {" "}— we&apos;ll get in touch with you.
+        </p>
+
       </div>
     </main>
   );
