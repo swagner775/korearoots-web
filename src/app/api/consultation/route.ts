@@ -4,7 +4,7 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
 
   const token = process.env.AIRTABLE_TOKEN;
-  const baseId = process.env.AIRTABLE_BASE_ID;
+  const baseId = process.env.AIRTABLE_CONSULTATIONS_BASE_ID ?? process.env.AIRTABLE_BASE_ID;
   const tableId = process.env.AIRTABLE_CONSULTATIONS_TABLE_ID;
 
   if (!token || !baseId || !tableId) {
