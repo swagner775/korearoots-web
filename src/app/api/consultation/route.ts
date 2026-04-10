@@ -44,8 +44,8 @@ export async function POST(req: NextRequest) {
 
   if (!res.ok) {
     const err = await res.text();
-    console.error("Airtable error:", err);
-    return NextResponse.json({ error: "Failed to save to Airtable" }, { status: 500 });
+    console.error("Airtable error:", res.status, err);
+    return NextResponse.json({ error: "Failed to save to Airtable", detail: err, status: res.status }, { status: 500 });
   }
 
   return NextResponse.json({ ok: true });
