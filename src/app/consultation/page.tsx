@@ -118,6 +118,8 @@ export default function ConsultationPage() {
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>(empty);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const set = (field: keyof FormData, value: string) =>
     setForm((f) => ({ ...f, [field]: value }));
@@ -388,12 +390,34 @@ export default function ConsultationPage() {
               Continue →
             </button>
           ) : (
-            <button
-              onClick={() => setSubmitted(true)}
-              className="rounded-full bg-teal px-8 py-3 text-sm font-semibold text-white hover:bg-teal/80 transition-colors shadow-lg shadow-teal/20"
-            >
-              Submit & Book My Call →
-            </button>
+            <div className="flex flex-col items-end gap-2">
+              {submitError && (
+                <p className="text-red-400 text-xs">{submitError}</p>
+              )}
+              <button
+                disabled={submitting}
+                onClick={async () => {
+                  setSubmitting(true);
+                  setSubmitError("");
+                  try {
+                    const res = await fetch("/api/consultation", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify(form),
+                    });
+                    if (!res.ok) throw new Error("Failed");
+                    setSubmitted(true);
+                  } catch {
+                    setSubmitError("Something went wrong — please try again or email us directly.");
+                  } finally {
+                    setSubmitting(false);
+                  }
+                }}
+                className="rounded-full bg-teal px-8 py-3 text-sm font-semibold text-white hover:bg-teal/80 transition-colors shadow-lg shadow-teal/20 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {submitting ? "Submitting..." : "Submit & Book My Call →"}
+              </button>
+            </div>
           )}
         </div>
 
