@@ -29,7 +29,7 @@ export default function Navbar() {
             priority
           />
           <span className="text-white font-bold text-lg tracking-tight">
-            Korea <span className="text-teal">Roots</span>
+            Korea<span className="text-teal">Roots</span>
           </span>
         </Link>
 

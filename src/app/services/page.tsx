@@ -173,6 +173,49 @@ export default function ServicesPage() {
     <main className="flex-1 bg-navy min-h-screen pt-24 pb-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col gap-20 pt-8">
 
+        {/* SaaS Membership */}
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col items-center text-center gap-3">
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5">
+              <span className="text-teal text-xs font-semibold uppercase tracking-widest">Membership</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              SaaS Membership
+            </h2>
+            <p className="text-white/40 text-sm max-w-lg">
+              Access the platform — AI-translated 빈집 directory, D-8 eligibility tools, pre-screening resources, and community materials.
+            </p>
+          </div>
+          <div className="max-w-sm mx-auto w-full rounded-2xl border border-teal/30 bg-teal/5 p-7 flex flex-col gap-4">
+            <div className="flex flex-col">
+              <span className="text-3xl font-black text-gold">KRW 150,000</span>
+              <span className="text-white/30 text-xs mt-0.5">per year (~$110 USD)</span>
+            </div>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                "AI-translated 빈집 (bin-jip) property directory",
+                "Filter by region, price, and D-8 eligibility",
+                "D-8 visa eligibility pre-screening tools",
+                "Property pre-screening and shortlist tools",
+                "Community resources and guides",
+              ].map((f) => (
+                <li key={f} className="flex items-start gap-2.5 text-sm text-white/60">
+                  <svg className="w-4 h-4 text-teal shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/consultation"
+              className="mt-auto rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-center text-white hover:bg-white/10 transition-colors"
+            >
+              Get Started
+            </Link>
+          </div>
+        </div>
+
         {/* Packages */}
         <div className="flex flex-col gap-8">
           <div className="flex flex-col items-center text-center gap-3">
@@ -250,6 +293,9 @@ export default function ServicesPage() {
             </h2>
             <p className="text-white/40 text-sm max-w-lg">
               Already have part of the process sorted? Pick only what you need.
+            </p>
+            <p className="text-xs text-white/25 max-w-md">
+              Note: STR Property Management and Renovation Management are Phase B services — available as standalone offerings post-launch. They are included in our Full Service and Founding Member packages from day one.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">

@@ -33,7 +33,9 @@ export default function BlogPage() {
             Guides & insights
           </h1>
           <p className="text-white/50 max-w-xl leading-relaxed text-sm">
-            Plain-English guides on Korean property investment, the D-8 visa, short-term rental management, and everything in between.
+            Plain-English guides on{" "}
+            <span className="text-white/70 font-medium">빈집 (bin-jip) — literally &ldquo;empty house,&rdquo; Korea&apos;s officially registered abandoned rural properties</span>{" "}
+            — Korean property investment, the D-8 visa, short-term rental management, and everything in between.
           </p>
         </div>
 

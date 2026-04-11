@@ -12,9 +12,9 @@ const glossary = [
     term: "빈집 (Bin-jip)",
     pronunciation: "bean-jeep",
     short: "Abandoned rural property",
-    body: `빈집 literally means "empty house" in Korean. These are rural and semi-rural properties — mostly traditional hanok farmhouses — that have been abandoned as South Korea's population has shifted to cities over the past 50 years.
+    body: `빈집 (bin-jip) — literally "empty house," Korea's officially registered abandoned rural properties. These are rural and semi-rural properties — mostly traditional hanok farmhouses — that have been abandoned as South Korea's population has shifted to cities over the past 50 years.
 
-Korea now has over 1.5 million of these properties, and the government actively wants them redeveloped. Municipal governments maintain public 빈집 registers and offer purchase incentives to buyers who commit to renovation and business use.
+Korea now has 1.53 million of these properties (Korea Herald, 2025), and the government actively wants them redeveloped. Municipal governments maintain public 빈집 registers and offer purchase incentives to buyers who commit to renovation and business use.
 
 For foreign investors, 빈집 represent one of the only legal pathways to purchasing affordable Korean real estate — at prices far below urban markets — while simultaneously qualifying for a business investment visa.`,
     tag: "Property",
@@ -184,6 +184,91 @@ export default function AboutPage() {
               <div className="h-px bg-white/10" />
             </div>
           ))}
+        </div>
+
+        {/* Team */}
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-3">
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 w-fit">
+              <span className="text-teal text-xs font-semibold uppercase tracking-widest">The Team</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">Who&apos;s behind KoreaRoots</h2>
+            <p className="text-white/50 text-sm leading-relaxed max-w-2xl">
+              No other team in Korea holds both sides of this equation — foreign investor trust and rural Korean access.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Steve */}
+            <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="flex flex-col gap-1">
+                <h3 className="text-white font-bold text-lg">Steve Wagner</h3>
+                <p className="text-teal text-sm font-medium">Co-Founder and CEO</p>
+              </div>
+              <ul className="flex flex-col gap-2">
+                {[
+                  "American entrepreneur, F-4 visa holder",
+                  "6+ years continuous residence and business operation in Seoul",
+                  "Founded Shared Homies — Seoul's largest English-language international co-living network",
+                  "750+ international residents housed over 6 years",
+                  "50+ rooms under active management",
+                  "Consistent 90%+ occupancy rate",
+                  "Former Samsung executive English trainer",
+                ].map((fact) => (
+                  <li key={fact} className="flex items-start gap-2.5 text-sm text-white/60">
+                    <svg className="w-4 h-4 text-teal/60 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {fact}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Danny */}
+            <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="flex flex-col gap-1">
+                <h3 className="text-white font-bold text-lg">Danny Hong (홍관호)</h3>
+                <p className="text-teal text-sm font-medium">Co-Founder and Korea Operations</p>
+              </div>
+              <ul className="flex flex-col gap-2">
+                {[
+                  "Korean serial entrepreneur",
+                  "Founded GMMC (주식회사 지엠엠씨) — medical device manufacturer with globally exported products",
+                  "Awarded by KITA, KICOX, and the Korean Parliament",
+                  "Featured in JoongAng Ilbo (Korea's second-largest national newspaper) in 2014",
+                  "Lived in a 빈집 for two years",
+                  "Deep established relationships with rural community centers (마을회관) across multiple provinces",
+                  "Fully bilingual (English and Korean)",
+                ].map((fact) => (
+                  <li key={fact} className="flex items-start gap-2.5 text-sm text-white/60">
+                    <svg className="w-4 h-4 text-teal/60 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {fact}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Legal */}
+        <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+          <h2 className="text-white font-bold text-base">Legal &amp; Compliance</h2>
+          <ul className="flex flex-col gap-3">
+            {[
+              "KoreaRoots does not operate as a licensed real estate agent (공인중개사). We are an FDI advisory and concierge platform.",
+              "All property transactions are facilitated through partner law firms and licensed Korean entities.",
+              "D-8 visa filing is coordinated through partner immigration law firms — KoreaRoots does not practice law directly.",
+              "STR income for clients flows through Wehome (government-certified) to remain legally compliant for foreign owners.",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2.5 text-xs text-white/40">
+                <svg className="w-3.5 h-3.5 text-teal/40 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Bottom CTA */}

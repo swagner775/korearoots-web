@@ -4,8 +4,8 @@ export const posts: BlogPost[] = [
   {
     id: "001",
     slug: "what-is-binjip-koreas-abandoned-properties-explained",
-    title: "What is a 빈집 (Bin-jip)? Korea's 1.5 Million Abandoned Properties Explained",
-    excerpt: "Korea has more than 1.5 million empty rural homes sitting idle. Here's why they exist, why the government wants them gone, and why Western investors are paying attention.",
+    title: "What is a 빈집 (Bin-jip)? Korea's 1.53 Million Abandoned Properties Explained",
+    excerpt: "Korea has 1.53 million empty rural homes sitting idle. Here's why they exist, why the government wants them gone, and why Western investors are paying attention.",
     date: "2025-03-10",
     readTime: 6,
     category: "Property",
@@ -13,7 +13,7 @@ export const posts: BlogPost[] = [
     sections: [
       {
         type: "paragraph",
-        content: "Drive two hours outside of Seoul and the landscape changes fast. Rice paddies, mountain villages, and alongside the beauty — row after row of empty homes. Roofs caved in. Courtyards overgrown. Gates rusted shut. These are 빈집 (bin-jip) — literally, 'empty houses' — and there are over 1.5 million of them scattered across rural South Korea.",
+        content: "Drive two hours outside of Seoul and the landscape changes fast. Rice paddies, mountain villages, and alongside the beauty — row after row of empty homes. Roofs caved in. Courtyards overgrown. Gates rusted shut. These are 빈집 (bin-jip) — literally 'empty house,' Korea's officially registered abandoned rural properties — and there are 1.53 million of them scattered across rural South Korea (Korea Herald, 2025).",
       },
       {
         type: "heading",
@@ -25,7 +25,7 @@ export const posts: BlogPost[] = [
       },
       {
         type: "paragraph",
-        content: "Today, Korea's rural population continues to shrink. Young people don't want to farm. The elderly who remain are dying. And every year, more homes join the register of 빈집 — unmaintained, untaxed, and slowly collapsing.",
+        content: "Today, Korea's rural population continues to shrink. Young people don't want to farm. The elderly who remain are dying. And every year, more homes join the register of 빈집 (bin-jip) — unmaintained, untaxed, and slowly collapsing.",
       },
       {
         type: "heading",

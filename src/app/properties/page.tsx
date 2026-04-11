@@ -40,8 +40,8 @@ export default function PropertiesPage() {
             Available Properties
           </h1>
           <p className="text-white/50 max-w-xl leading-relaxed">
-            Every listing is title-verified and assessed for D-8 visa eligibility. Prices
-            shown in Korean won (₩).
+            <span className="text-white/80 font-medium">빈집 (bin-jip) — literally &ldquo;empty house,&rdquo; Korea&apos;s officially registered abandoned rural properties.</span>{" "}
+            Every listing is title-verified and assessed for D-8 visa eligibility. Prices shown in Korean won (₩).
           </p>
         </div>
 

@@ -22,9 +22,9 @@ const steps = [
   {
     number: "01",
     icon: "🔍",
-    title: "Browse & Select a Property",
-    body: <>Explore our curated <Term href="/about#binjip">빈집</Term> listings filtered by region, size, and budget. Every property is title-verified and assessed for business conversion potential.</>,
-    detail: <>We source directly from Korean municipal <Term href="/about#binjip">빈집</Term> registers and private sellers, so you skip the noise.</>,
+    title: "Browse and Select a Property",
+    body: <>Review our AI-translated <Term href="/about#binjip">빈집</Term> listings, filter by region and budget, and shortlist your opportunities. Every property is title-verified and assessed for STR conversion potential.</>,
+    detail: <>We aggregate directly from Korea&apos;s 89 municipal <Term href="/about#binjip">빈집</Term> registers — the only English-language platform to do so.</>,
   },
   {
     number: "02",
@@ -36,7 +36,7 @@ const steps = [
   {
     number: "03",
     icon: "🏛️",
-    title: "Purchase & Entity Setup",
+    title: "Purchase and Entity Setup",
     body: <>We register your Korean business entity (법인), handle the property transfer at the local registry office, and ensure full <Term href="/about#fdi">FDI</Term> compliance at closing.</>,
     detail: "Typical timeline: 6–10 weeks from offer acceptance to title transfer.",
   },
@@ -44,13 +44,13 @@ const steps = [
     number: "04",
     icon: "🛂",
     title: "D-8 Visa Application",
-    body: <>With your registered investment in hand, we prepare and submit your <Term href="/about#d8-visa">D-8 business investment visa</Term> application to the Korean Immigration Service.</>,
+    body: <>Working with our partner law firms, we prepare and submit your <Term href="/about#d8-visa">D-8 business investment visa</Term> application to the Korean Immigration Service.</>,
     detail: <><Term href="/about#d8-visa">D-8 visa</Term> grants 2-year residency, renewable, with a path to <Term href="/about#f2-visa">F-2 long-term residency</Term>.</>,
   },
   {
     number: "05",
     icon: "🔨",
-    title: "Renovation & Launch",
+    title: "Renovation and Launch",
     body: <>Our network of local architects, contractors, and permit consultants turns your <Term href="/about#binjip">빈집</Term> into a short-term rental, guesthouse, café, or remote workspace.</>,
     detail: "Korean rural renovation grants (농촌 활성화) may offset up to 50% of renovation costs.",
   },
@@ -80,8 +80,9 @@ export default function HowItWorksPage() {
             <span className="text-gold">visa in hand</span>
           </h1>
           <p className="text-white/50 max-w-xl leading-relaxed">
-            A clear, end-to-end process designed for Western buyers with no prior
-            Korean real estate or immigration experience required.
+            A clear, end-to-end process designed for Western buyers — from finding a{" "}
+            <span className="text-white/80 font-medium">빈집 (bin-jip) — literally &ldquo;empty house,&rdquo; Korea&apos;s officially registered abandoned rural properties</span>{" "}
+            — to holding your D-8 visa. No prior Korean experience required.
           </p>
         </div>
 
@@ -121,6 +122,15 @@ export default function HowItWorksPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Safety net message */}
+        <div className="rounded-2xl border border-gold/20 bg-gold/5 px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 max-w-3xl mx-auto w-full">
+          <span className="text-2xl shrink-0">🛡️</span>
+          <p className="text-white/70 text-sm leading-relaxed">
+            <span className="text-gold font-semibold">Asset protection guarantee: </span>
+            If the D-8 visa application fails for any reason, the investor keeps the property. The asset is never at risk.
+          </p>
         </div>
 
         {/* Bottom CTA */}

@@ -31,29 +31,27 @@ function HeroSection() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pt-24 pb-16 grid lg:grid-cols-2 gap-16 items-center">
         {/* Left: copy */}
         <div className="flex flex-col gap-8">
+          <p className="text-teal text-xs font-semibold uppercase tracking-widest">Korea&apos;s First AI-Powered FDI Advisory &amp; Concierge Platform</p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
-            Own a piece of{" "}
-            <span className="text-gold">rural Korea.</span>
-            <br />
-            Build your future here.
+            Find it. Fix it.{" "}
+            <span className="text-gold">Own it. Live it.</span>
           </h1>
 
           <p className="text-lg text-white/60 leading-relaxed max-w-lg">
-            KoreaRoots connects Western investors with Korea&apos;s{" "}
-            <span className="text-white/90 font-medium">빈집 (bin-jip)</span>{" "}
-            abandoned rural properties — turning forgotten homes into thriving
-            businesses and a pathway to Korean residency. Whether you want to{" "}
+            KoreaRoots is an AI-powered FDI advisory and concierge platform that aggregates Korea&apos;s 89 municipal{" "}
+            <span className="text-white/90 font-medium">빈집 (bin-jip) — literally &ldquo;empty house,&rdquo; Korea&apos;s officially registered abandoned rural properties</span>{" "}
+            — into a single English-language directory. Whether you want to{" "}
             <span className="text-white/80">retire in Korea</span>, build a{" "}
             <span className="text-white/80">countryside life in Korea</span>, or simply{" "}
-            <span className="text-white/80">buy property in Korea</span>, we handle everything end-to-end.
+            <span className="text-white/80">buy property in Korea</span>, we guide you through acquisition, company incorporation, D-8 visa filing, and rental income management.
           </p>
 
           {/* Stats */}
           <div className="flex flex-wrap gap-6 pt-2">
             {[
-              { value: "빈집", label: "Verified Properties" },
+              { value: "1.53M", label: "Abandoned Homes in Korea" },
+              { value: "89", label: "Municipal Registries" },
               { value: "D-8", label: "Visa Pathway" },
-              { value: "100%", label: "FDI Compliant" },
             ].map((stat) => (
               <div key={stat.label} className="flex flex-col">
                 <span className="text-2xl font-bold text-gold">{stat.value}</span>
