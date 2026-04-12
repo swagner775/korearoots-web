@@ -20,7 +20,7 @@ const statuses: { value: PropertyStatus | "all"; label: string }[] = [
 ];
 
 export const metadata = {
-  title: "Properties — KoreaRoots",
+  title: "Browse Properties",
   description: "Browse verified 빈집 abandoned rural properties in Korea eligible for D-8 business investment visa.",
 };
 

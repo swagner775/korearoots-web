@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "About — KoreaRoots",
+  title: "About & Glossary",
   description:
     "Understand the key terms behind Korean rural property investment — 빈집, FDI, MOLIT, D-8 visa, F-2 residency, and STR explained in plain English.",
 };

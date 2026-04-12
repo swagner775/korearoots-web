@@ -4,7 +4,7 @@ import { posts, formatDate } from "@/lib/blog";
 import { BlogCategory } from "@/types/blog";
 
 export const metadata = {
-  title: "Blog — KoreaRoots",
+  title: "Blog",
   description: "Guides, explainers, and investment insights for Western buyers navigating Korean rural property, the D-8 visa, and STR management.",
 };
 

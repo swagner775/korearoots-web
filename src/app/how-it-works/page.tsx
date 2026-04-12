@@ -13,7 +13,7 @@ function Term({ href, children }: { href: string; children: React.ReactNode }) {
 }
 
 export const metadata = {
-  title: "How It Works — KoreaRoots",
+  title: "How It Works",
   description:
     "A step-by-step guide to buying a 빈집 abandoned rural Korean property and obtaining a D-8 business investment visa.",
 };

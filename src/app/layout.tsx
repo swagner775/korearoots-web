@@ -14,9 +14,61 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KoreaRoots — Invest in Rural Korea",
+  title: {
+    default: "KoreaRoots — Own Rural Korea. Build Your Future Here.",
+    template: "%s | KoreaRoots",
+  },
   description:
-    "FDI advisory platform for Western investors buying abandoned rural Korean properties (빈집) and obtaining a D-8 business investment visa.",
+    "Korea's first AI-powered FDI advisory platform for Western investors. Buy abandoned rural Korean properties (빈집) under ₩150M and obtain a D-8 business investment visa.",
+  keywords: [
+    "Korea property investment",
+    "buy abandoned house Korea",
+    "빈집 purchase foreigner",
+    "Korea D-8 visa investment",
+    "rural Korea real estate",
+    "Korean FDI advisory",
+    "빈집 투자",
+    "Korea business visa property",
+    "buy property Korea foreigner",
+    "rural Korea abandoned homes",
+  ],
+  authors: [{ name: "KoreaRoots", url: "https://korearoots.com" }],
+  creator: "KoreaRoots",
+  metadataBase: new URL("https://korearoots.com"),
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://korearoots.com",
+    siteName: "KoreaRoots",
+    title: "KoreaRoots — Own Rural Korea. Build Your Future Here.",
+    description:
+      "Buy abandoned rural Korean properties (빈집) under ₩150M and obtain a D-8 business investment visa. Korea's first AI-powered FDI advisory platform.",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "KoreaRoots — Korea's First AI-Powered FDI Advisory Platform",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KoreaRoots — Own Rural Korea. Build Your Future Here.",
+    description:
+      "Buy abandoned rural Korean properties (빈집) under ₩150M and obtain a D-8 business investment visa.",
+    images: ["/images/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

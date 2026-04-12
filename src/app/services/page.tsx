@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Services — KoreaRoots",
+  title: "Services & Pricing",
   description:
     "End-to-end advisory services for buying a Korean 빈집 property, setting up your business, and obtaining a D-8 visa — handled for you from start to finish.",
 };
